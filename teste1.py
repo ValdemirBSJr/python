@@ -1,19 +1,22 @@
-def msg(mens):
-    print("O valor digitado foi: " +mens)
+#!/home/datacenter/.virtualenvs/k36/bin/python
+# -*- coding: utf-8 -*-
+# Author: Valdemir Bezerra
 
-mensagem = input("Digite um nome: ")
+class Teste():
+    def __init__(self, nome):
+        self.nome = nome
 
-msg(mensagem)
+    def retornaNome(self, retNome):
+        self.nome = retNome
 
-mensagem2 = input("Digite para forma direta..: ")
+        if self.nome =='':
+            print('String Vazia')
+        else:
+            for i, v in enumerate(self.nome):
+                print('Índice {} | Letra {}'.format(i, v))
 
-print("Foi digitado: " + mensagem2)
 
-print("O tamanho do primeiro nome foi: " + str(len(mensagem)))
+variavel = Teste('Valdemir')
+print(variavel.nome)
 
-total = 0
-
-for num in range(101):
-    total = total + num
-
-print(total)
+variavel.retornaNome(variavel.nome)
