@@ -1,0 +1,63 @@
+Para criar projeto scrapy:
+
+activate k35
+
+Vai na pasta onde quer criar via terminal
+
+digitar: scrapy startproject <<nome do projeto>>
+------------------------------------------------------------
+Para criar uma nova spider
+
+scrapy genspider <<nome>> <<dominio que vai realizar a busca>>
+
+exemplo: scrapy genspider cars pb.olx.com.br/veiculos-e-acessorios/carros
+
+------------------------------------------------------------------------
+
+Para executar entre no k35 > na pasta e aplique o comando> # Para executar entre no k35 > 
+na pasta e aplique o comando > C:\dev\kivy\excript\app-comerciais-kivy\aulas\curso-scrapy\aula31-comecandoScrapy> scrapy runspider inicio.py
+
+------------------------------------------------------------------
+
+Para navegar pelo conteudo no terminal:
+
+scrapy shell <<dominio>>
+
+depois disso, pra ver qual o status que a pagina respondeu digitar: response
+
+Para navegar no elemento: div = response.xpath('<<xpath>>')
+
+Para extrair o conteudo html desse elemento: div.extract()
+
+Quando tem mais de uma div:
+
+In [10]: divs = response.xpath('/html/body/ir-root/ir-content/ir-course-catalog/section/div/div[2]/div[2]')
+
+In [11]: for div in divs:
+    ...:     print(div)
+
+Para pegar um elemento relacionado com o coletado anteriormente:
+
+In [14]: for div in divs:
+    ...:     div.xpath('.//h3/a').extract()
+
+
+Para pegar so atributo texto:
+
+response.xpath('/html/body/ir-root/ir-content/ir-course-catalog/section/div/div[2]/div[2]/div/div[1]/div[2]/div
+   ...: [1]/div[1]/h3/a/text()').extract_first()
+
+####################################################
+
+Para retirar texto da tag title
+
+response.xpath('//title/text()').extract_first()
+
+Para pegar o valor de uma tag que contenha determinado texto (Util pro trata MOS)
+
+response.xpath('//span[contains(text(), "Ano")]')
+
+PAra pegar uma tag que estiver após uma determinada tag
+
+response.xpath('//span[contains(text(), "Ano")]/following-sibling::strong/a/@title').extract_first()
+response.xpath('//span[contains(text(), "Ano")]/following-sibling::strong/a/text()').extract_first()
