@@ -1,0 +1,1 @@
+C:\Users\seyro\Anaconda3\envs\k35\python.exe C:\dev\kivy\excript\app-comerciais-kivy\automatize-livro\teste_pyperclip.py %*

@@ -1,0 +1,78 @@
+<!--
+Copyright © 2000 - 2008 - Vírtua
+DATACENTER - Porto Alegre - RS
+email: marcio.avila@netservicos.com.br
+-->
+<HTML>
+<HEAD>
+<TITLE>D A T A C E N T E R - Vírtua - Belo Horizonte</TITLE>
+<LINK REL="Stylesheet" HREF="../styles/default.css" TYPE="text/css">
+</HEAD>
+<SCRIPT>
+function FocoInicial()
+	{
+		document.Consulta.mac.focus();
+	}
+function Limpa()
+	{
+		var Campo;
+		Campo = window.event.srcElement;
+		if(Campo.value.length == Campo.size) Campo.value = "";
+	}
+function Limpa2(Campo)
+	{
+		if(Campo.value.length == Campo.size) Campo.value = "";
+	}
+function MudaCampo(Seguinte)
+	{
+		var Tecla, Campo;
+		Tecla = window.event.keyCode;
+		if(Tecla == 13)
+		{
+			return;
+		}
+		Campo = window.event.srcElement;
+		if(Campo.value.length == Campo.size && Tecla > 46) Seguinte.focus();
+		event.cancelBubble = true;
+		return;
+	}
+
+
+
+function autotab(original,destination){ 
+if (original.getAttribute&&original.value.length==original.getAttribute("maxlength")) 
+destination.focus() 
+} 
+
+function Executa()
+	{
+		Consulta.submit();
+	}
+</SCRIPT>
+<BODY CLASS=LEFTMENU>
+<TABLE cellspacing="0" cellpadding="0" border="0" width="100%">
+	<TR>
+           <TD background="../media/fundo_teralink.gif"><IMG SRC="../media/logo_cable.jpg"></TD>
+	   <TD background="../media/fundo_cable.jpg" align=right valign=middle width=350>
+                    	<TABLE cellspacing="0" cellpadding="0" border="0">
+                	    <TR>
+               		    <TD valign=top width=50 align=right><A HREF="cable_docsis.php?cont=N"><IMG SRC="../media/consulta_cable.gif" ALT="Localizar por Cable"></A>&nbsp;&nbsp;&nbsp;</TD>
+         	            <TD valign=middle align=right width=180><form name="Consulta" action = "cable_docsis.php?cont=S&txtContrato=12502252" method="post">
+                            <SELECT NAME=cmbCable>
+                            <OPTION value="90F3055C7164">90F3055C7164</OPTION>
+<OPTION value="FC8E7EC71F7A">FC8E7EC71F7A</OPTION>
+<OPTION value="942CB3DD8CE7">942CB3DD8CE7</OPTION>
+<OPTION value="90F3055C7168">90F3055C7168</OPTION>
+<OPTION value="942CB3DD8CEB">942CB3DD8CEB</OPTION>
+                			
+                		</SELECT>&nbsp;
+                	    	</TD>
+                		    <TD valign=middle width=50><INPUT TYPE="image"  class=cmdNormal NAME="imgExec" SRC="../media/exec.jpg" border="0" value="Enviar"><A onclick="Executa();"></A>&nbsp;&nbsp;&nbsp;</TD>
+                	    </TR>
+                    </TABLE>                    
+                    		</TD>
+	</TR>
+</TABLE>
+</TABLE>
+</BODY>
+</HTML>
