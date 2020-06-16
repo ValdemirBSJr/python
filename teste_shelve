@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# Author: Valdemir Bezerra
+
+import shelve
+import os
+
+#O shelve serve para salvar variaveis e configuraçoes de modo binario no computador
+
+#Abaixo como cria e salva os valores
+
+arquivoSRC = shelve.open(os.path.join('./scr/', 'score'))
+scr = 1
+arquivoSRC['scr'] = scr
+print(arquivoSRC['scr'])
+arquivoSRC.close()
+
+#Para abrir e resgatar
+
+#arquivoSRC = shelve.open(os.path.join('./teste_shelve/', 'score'))
+
+#print(type(arquivoSRC['scr']))
+
+#valor = arquivoSRC['scr']
+
+#soma = int(valor) + 1
+
+#arquivoSRC['scr'] = soma
+
+#print(arquivoSRC['scr'])
+
+#arquivoSRC.close()
+
+#print(type(valor))
