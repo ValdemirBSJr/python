@@ -52,7 +52,7 @@ class Tela_Log_Box:
 
                     try:
 
-                        arquivo_Conf = shelve.open(os.path.join('/home/valdemir/Documentos/PYTHON-PROJETOS/pySIMPLEGUI/db'))
+                        arquivo_Conf = shelve.open(os.path.join('caminho/db'))
                         verify_login = arquivo_Conf['login']
                         verify_senha = arquivo_Conf['senha']
                         arquivo_Conf.close()
