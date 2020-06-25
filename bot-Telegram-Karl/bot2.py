@@ -9,7 +9,8 @@ from datetime import datetime
 
 #Karlbetbot
 
-#botId = 'ID_DO_BOT' 
+
+botId = 'ID_DO_BOT' #meubotSNR
 
 bot = telebot.TeleBot(botId)
 
@@ -33,7 +34,8 @@ def retorna_parte_link(link_completo):
 
 
         jogo = jogo[1].replace(' v ', ' x ')
-        jogo = jogo.replace('U+26BD', '')
+        jogo = jogo.replace('\u26bd', '') #mata o emoji \u26bd
+        jogo = jogo.lstrip()
         jogo = jogo.replace('SCR', '')
 
 
@@ -51,18 +53,18 @@ def retorna_parte_link(link_completo):
 
         estado_arquivo = 'a'
 
-        f = open(os.path.join('/home/caminho/bot-Telegram-Karl', 'dados.txt'), 'r')
+        f = open(os.path.join('/home/caminho_bot', 'dados.txt'), 'r')
         qtde_linhas = f.readlines()
 
 
 
-        if len(qtde_linhas) > 4:
+        if len(qtde_linhas) > 9:
             estado_arquivo = 'w'
 
 
 
 
-        with open(os.path.join('/home/caminho/bot-Telegram-Karl', 'dados.txt'), estado_arquivo) as arquivo:
+        with open(os.path.join('/home/caminho_bot', 'dados.txt'), estado_arquivo) as arquivo:
             arquivo.write(f'{texto_para_salvar}\n')
             arquivo.close()
 
@@ -75,10 +77,21 @@ def retorna_parte_link(link_completo):
 def send_welcome(message):
     bot.reply_to(message, "Olá, eu sou o BetBot do Karl!\nMinha função é salvar em um arquivo todos os índices do link?")
 
-@bot.message_handler(func=lambda message: True)
-def echo_all(message):
+#@bot.message_handler(func=lambda message: True)
+#def echo_all(message):
+#    message_pronta = retorna_parte_link(message.text)
+#    bot.reply_to(message, message_pronta)
+
+@bot.message_handler(regexp=r'^.*Detectei uma oportunidade!*')
+def handle_message(message):
     message_pronta = retorna_parte_link(message.text)
     bot.reply_to(message, message_pronta)
+
+@bot.message_handler(regexp=r'^(?!.*Detectei uma oportunidade!/*)')
+def handle_message(message):
+    message.text = 'Olá, só trabalho com oportunidades do betfair!'
+    bot.reply_to(message, message.text)
+
 
 
 
