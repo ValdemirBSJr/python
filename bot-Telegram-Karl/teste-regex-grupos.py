@@ -1,4 +1,4 @@
-#!/home/valdemir/e38/bin/python3.8
+#!/home/env/python3.8
 # -*- coding: utf-8 -*-
 #Author: Valdemir Bezerra
 
