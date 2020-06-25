@@ -18,6 +18,8 @@ Campeonato: English Premier League
 Aposta: BACK Over 0.5 Goals HT
 Odd: @1.48'''
 
+
+
 criterioBusca = re.findall(r'Jogo: :.*|Aposta:.*', busca2)
 
 
@@ -27,6 +29,7 @@ jogo = criterioBusca[0].split(':')
 aposta = criterioBusca[1].split(' ')
 
 jogo = jogo[3].replace(' v ', ' x ')
+jogo = jogo.replace('\u26bd', '')
 jogo = jogo.replace('SCR', '')
 
 print(jogo)
