@@ -1,4 +1,4 @@
-#!/home/valdemir/Documentos/PYTHON-PROJETOS/meu_ponto/venv/bin/python
+#!/home/user/env python
 # -*- coding: utf-8 -*-
 #Author: Valdemir Bezerra
 
