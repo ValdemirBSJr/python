@@ -1,4 +1,4 @@
-#!/home/user/env python
+#!/home/valdemir/Documentos/PYTHON-PROJETOS/meu_ponto/venv/bin/python
 # -*- coding: utf-8 -*-
 #Author: Valdemir Bezerra
 
@@ -37,7 +37,7 @@ class Tela_ponto:
             [sg.Text('Horário de entrada'), sg.Input(key='-TIMEIN1-', size=(4,1), change_submits=True, do_not_clear=True, focus=True), sg.Text(':', pad=(0,0)),sg.Input(key='-TIMEIN2-', size=(4,1), change_submits=True, do_not_clear=True),  sg.Text('Horário de Saída'),sg.Input(hora_atual, key='-TIMEOUT1-', size=(4, 1), change_submits=True, do_not_clear=True), sg.Text(':', pad=(0, 0)),sg.Input(minuto_atual, key='-TIMEOUT2-', size=(4, 1), change_submits=True, do_not_clear=True)],
             [sg.Button('Salvar')],
             [sg.Text('Horários Salvos..:')],
-            [sg.Listbox(values=lista_populada, size=(80,10), auto_size_text=True, key='-BOX-')],
+            [sg.Listbox(values=lista_populada, size=(90,15), auto_size_text=True, key='-BOX-')],
             [sg.Button('Editar'), sg.Button('Excluir'), sg.Button('Exportar'), sg.Button('Sair')],
             [sg.Text()],
             [sg.Text()],
@@ -46,7 +46,7 @@ class Tela_ponto:
         ]
 
         #monto a janela
-        self.janela = sg.Window('Controle dos horários', size=(600, 400)).layout(layout)
+        self.janela = sg.Window('Controle dos horários', size=(700, 400)).layout(layout)
 
 
 
@@ -240,14 +240,21 @@ class Tela_ponto:
                             sg.Print('Não foi possível localizar o arquivo.', text_color='white', background_color='black')
 
                         sg.Print('Finalizando...', text_color='white', background_color='black')
-                        time.sleep(10)
+                        time.sleep(8)
                         sg.PrintClose()
 
 
                         print(popular_espelho)
 
+                    except OSError:
+                        #apresenta um erro pois o box nao aceita symlink entao eu ignoro esse erro
+                        sg.Print('Finalizando...', text_color='white', background_color='black')
+                        time.sleep(8)
+                        sg.PrintClose()
+
                     except Exception as erro:
                         sg.popup_scrolled(f'Erro ao salvar arquivo de espelho de ponto. Erro: {erro}')
+
 
 
 

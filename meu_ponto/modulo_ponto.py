@@ -1,9 +1,11 @@
-#!/home/user/env python
+#!/home/valdemir/Documentos/PYTHON-PROJETOS/meu_ponto/venv/bin/python
 # -*- coding: utf-8 -*-
 #Author: Valdemir Bezerra
 
 import sqlite3
 import os
+from datetime import datetime, timedelta
+
 
 class Acesso_BD:
 
@@ -101,10 +103,21 @@ class Acesso_BD:
                 data = c.fetchall()
                 dbase.commit()
 
-                #edito a data para ficar com apresentacao melhor, criando uma nova lista para nao trabalhar com as tuplas retornadas
+                #edito a data para ficar com apresentacao melhor, criando uma nova lista para nao trabalhar com as tuplas retornadas e formatando a data para ficar amigável para brasileiros
                 data_formatada = []
                 for indice in range(len(data)):
-                    data_formatada.append(f'{data[indice][0]} - ENTRADA: {data[indice][1]} | SAÍDA: {data[indice][2]}')
+
+                    #converto o formato da data
+                    data_entrada = datetime.strptime(data[indice][1], '%Y/%m/%d %H:%M:%S')
+                    data_entrada_input = data_entrada.strftime('%d/%m/%Y %H:%M:%S') #aqui convert em string pra salvar
+
+                    data_saida = datetime.strptime(data[indice][2], '%Y/%m/%d %H:%M:%S')
+                    data_saida_input = data_saida.strftime('%d/%m/%Y %H:%M:%S')
+
+                    data_diferenca = abs((data_saida-data_entrada).total_seconds()) #aqui faço o calculo das horas trabalhadas
+                    data_diferenca = (data_diferenca / 60)/60
+
+                    data_formatada.append(f'{data[indice][0]} - ENTRADA: {data_entrada_input} | SAÍDA: {data_saida_input} | HORAS TRABALHADAS: {data_diferenca:.2f}')
 
                 #print(data_formatada)
 
@@ -131,9 +144,20 @@ class Acesso_BD:
                 dbase.commit()
 
                 # monto no formato de tabela para ser aberto no excel, csv
-                data_formatada = ['ÍNDICE;ENTRADA;SAÍDA']
+                data_formatada = ['ÍNDICE;ENTRADA;SAÍDA;TOTAL DE HORAS TRABALHADAS']
                 for indice in range(len(data)):
-                    data_formatada.append(f'{indice + 1};{data[indice][1]};{data[indice][2]}')
+
+                    #converto o formato da data
+                    data_entrada = datetime.strptime(data[indice][1], '%Y/%m/%d %H:%M:%S')
+                    data_entrada_input = data_entrada.strftime('%d/%m/%Y %H:%M:%S') #aqui convert em string pra salvar
+
+                    data_saida = datetime.strptime(data[indice][2], '%Y/%m/%d %H:%M:%S')
+                    data_saida_input = data_saida.strftime('%d/%m/%Y %H:%M:%S')
+
+                    data_diferenca = abs((data_saida-data_entrada).total_seconds()) #aqui faço o calculo das horas trabalhadas
+                    data_diferenca = (data_diferenca / 60)/60
+
+                    data_formatada.append(f'{indice + 1};{data_entrada_input};{data_saida_input};{data_diferenca:.2f}')
 
                 #print(data_formatada)
 
@@ -191,8 +215,8 @@ class Acesso_BD:
 if __name__ == '__main__':
 
     teste_conexao = Acesso_BD()
-    teste_conexao.monta_espelho()
-    #print(str(teste_conexao))
+    teste_conexao = teste_conexao.popula_lista()
+    print(str(teste_conexao))
     #teste_conexao.inserir_bd('lala', 'lolo')
     pass
 
