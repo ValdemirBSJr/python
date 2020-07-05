@@ -1,10 +1,10 @@
-#!/home/user/env python
+#!/home/valdemir/Documentos/PYTHON-PROJETOS/meu_ponto/venv/bin/python
 # -*- coding: utf-8 -*-
 #Author: Valdemir Bezerra
 
 
 import PySimpleGUI as sg
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 import time
 import re
 import modulo_ponto
@@ -33,7 +33,7 @@ class Tela_ponto:
 
         #layout da aplicacao
         layout = [
-            [sg.Text('Dia da marcação..:'), sg.Text(data_atual, key='data'), sg.CalendarButton('Usar outra Data?', target='data', key='data_personalizada', format='%d/%m/%Y')],
+            [sg.Text('Dia da marcação..:'), sg.Text(data_atual, key='data'), sg.CalendarButton('Usar outra Data?', target='data', key='data_personalizada', format='%d/%m/%Y'), sg.Checkbox('Madrugada?', change_submits=True, enable_events=True, default='0',key='madrugada')],
             [sg.Text('Horário de entrada'), sg.Input(key='-TIMEIN1-', size=(4,1), change_submits=True, do_not_clear=True, focus=True), sg.Text(':', pad=(0,0)),sg.Input(key='-TIMEIN2-', size=(4,1), change_submits=True, do_not_clear=True),  sg.Text('Horário de Saída'),sg.Input(hora_atual, key='-TIMEOUT1-', size=(4, 1), change_submits=True, do_not_clear=True), sg.Text(':', pad=(0, 0)),sg.Input(minuto_atual, key='-TIMEOUT2-', size=(4, 1), change_submits=True, do_not_clear=True)],
             [sg.Button('Salvar')],
             [sg.Text('Horários Salvos..:')],
@@ -80,8 +80,18 @@ class Tela_ponto:
                     data = data[-4:] + '/' + data[3:5] + '/' + data[:2]  #sql likely
                     #print(data)
 
+                    #abaixo, pega a data de saida, se o campo madrugada estiver validado, adiciono um dia para ficar de um dia para o outro
+                    if self.values['madrugada'] == True:
+                        # abaixo converto o texto da data em objeto data e deixo ela amigavel a brasileiros
+                        date = datetime.strptime(data, '%Y/%m/%d').date() #aqui convertemos a string em obj data
+                        data_madrugada = date + timedelta(days=1) #aqui somamos um dia a ela pra o virote da madruga
+                        data_madrugada = data_madrugada.strftime('%Y/%m/%d') #aqui convertemos pra texto e jogamos pra montar a string q vai pro bd
+
+                    else:
+                        data_madrugada = data
+
                     string_data_entrada = f'{data} {self.janela.find_element("-TIMEIN1-").Get()}:{self.janela.find_element("-TIMEIN2-").Get()}:00'
-                    string_data_saida = f'{data} {self.janela.find_element("-TIMEOUT1-").Get()}:{self.janela.find_element("-TIMEOUT2-").Get()}:00'
+                    string_data_saida = f'{data_madrugada} {self.janela.find_element("-TIMEOUT1-").Get()}:{self.janela.find_element("-TIMEOUT2-").Get()}:00'
 
                     try:
                         #instancio o obj batida do ponto e passo os valores para tratativa
@@ -96,6 +106,7 @@ class Tela_ponto:
                         self.janela['-TIMEIN2-'].Update('')
                         self.janela['-TIMEOUT1-'].Update('')
                         self.janela['-TIMEOUT2-'].Update('')
+                        self.janela['madrugada'].Update(False)
                         self.janela.find_element('-TIMEIN1-').SetFocus()
 
                         print(f'Registro de ponto inserido com sucesso!')
@@ -128,9 +139,20 @@ class Tela_ponto:
                        data = self.janela.find_element('data').Get()  #altera a data para sql likely
                        data = data[-4:] + '/' + data[3:5] + '/' + data[:2]
 
+                       # abaixo, pega a data de saida, se o campo madrugada estiver validado, adiciono um dia para ficar de um dia para o outro
+                       if self.values['madrugada'] == True:
+                           # abaixo converto o texto da data em objeto data e deixo ela amigavel a brasileiros
+                           date = datetime.strptime(data, '%Y/%m/%d').date()  # aqui convertemos a string em obj data
+                           data_madrugada = date + timedelta(days=1)  # aqui somamos um dia a ela pra o virote da madruga
+                           data_madrugada = data_madrugada.strftime('%Y/%m/%d')  # aqui convertemos pra texto e jogamos pra montar a string q vai pro bd
+
+                       else:
+                           data_madrugada = data
+
+
                        #edita a string completa para envio
                        string_data_entrada = f'{data} {self.janela.find_element("-TIMEIN1-").Get()}:{self.janela.find_element("-TIMEIN2-").Get()}:00'
-                       string_data_saida = f'{data} {self.janela.find_element("-TIMEOUT1-").Get()}:{self.janela.find_element("-TIMEOUT2-").Get()}:00'
+                       string_data_saida = f'{data_madrugada} {self.janela.find_element("-TIMEOUT1-").Get()}:{self.janela.find_element("-TIMEOUT2-").Get()}:00'
 
                        if len(self.values['-TIMEIN1-']) != 0 or len(self.values['-TIMEIN1-']) != 0 or len(self.values['-TIMEOUT1-']) != 0 or len(self.values['-TIMEOUT2-']) != 0:
 
@@ -148,6 +170,7 @@ class Tela_ponto:
                            self.janela['-TIMEIN2-'].Update('')
                            self.janela['-TIMEOUT1-'].Update('')
                            self.janela['-TIMEOUT2-'].Update('')
+                           self.janela['madrugada'].Update(False)
                            self.janela.find_element('-TIMEIN1-').SetFocus()
 
 
@@ -197,9 +220,11 @@ class Tela_ponto:
 
                             if os.path.exists(caminho_box):
                                 sg.Print('Existe uma pasta do Box ativa neste computador. Vamos salvar lá para você na pasta horarios-trabalhados', text_color='white', background_color='black')
+
                                 if os.path.isdir(caminho_box + 'horarios-trabalhados'):
                                     sg.Print('Copiando...', text_color='white', background_color='black')
                                     shutil.copy2(arquivo_salvar, caminho_box + 'horarios-trabalhados')
+
                                 else:
                                     sg.Print('Criando pasta horarios-trabalhados...', text_color='white', background_color='black')
                                     os.mkdir('/run/user/1000/gvfs/dav:host=dav.box.com,ssl=true/dav/horarios-trabalhados')
@@ -223,10 +248,6 @@ class Tela_ponto:
 
                     except Exception as erro:
                         sg.popup_scrolled(f'Erro ao salvar arquivo de espelho de ponto. Erro: {erro}')
-
-
-
-
 
 
 
@@ -258,6 +279,7 @@ class Tela_ponto:
                             self.janela['-TIMEIN2-'].Update('')
                             self.janela['-TIMEOUT1-'].Update('')
                             self.janela['-TIMEOUT2-'].Update('')
+                            self.janela['madrugada'].Update(False)
                             self.janela.find_element('-TIMEIN1-').SetFocus()
 
                             sg.popup_animated(image_source='',message=f'REGISTRO <<{indice[0]}>> APAGADO COM SUCESSO...', grab_anywhere=True, keep_on_top=True, alpha_channel=0.9)
