@@ -18,7 +18,7 @@ class Tela_ponto:
 
     def __init__(self):
 
-        sg.theme('random') #randomiza o tema
+        sg.theme('BrightColors') # random randomiza o tema
 
         #abaixo, converto uma data em string e mando para Text 'data'
         #o text 'data' é atualizado dinamicamente pelos atributos target e format do text 'data_personalizada'
@@ -126,7 +126,10 @@ class Tela_ponto:
                     indice = indice.split(' ') #aqui eu divido o retorno da consulta e pego o index na posicao 0 e a data na posicao 3
 
                     #abaixo converto o texto da data em objeto data e deixo ela amigavel a brasileiros
-                    date = datetime.strptime(indice[3], '%Y/%m/%d').date()
+                    date = indice[3]
+                    date = date[-4:] + '/' + date[3:5] + '/' + date[:2]
+                    print(date)
+                    date = datetime.strptime(date, '%Y/%m/%d').date()
                     data_formatada = date.strftime('%d/%m/%Y')
 
 
