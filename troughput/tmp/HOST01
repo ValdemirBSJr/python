@@ -1,0 +1,600 @@
+spawn /usr/bin/ssh 127.0.0.11 -l LOGIN
+User Authentication
+
+Password: 
+
+************************************ AVISO *************************************
+AVISO:  Este e um  sistema  privado  para  uso  exclusivo  da  NET  Servicos  de
+Comunicacao  S. A..  Acessos   nao  autorizados  ou  tentativas  de  acesso  nao
+autorizado, sao considerados atos  ilicitos e estes incidentes sao  monitorados,
+bem como suas  evidencias sao  armazenadas em local  seguro e de acesso restrito
+para  uso  posterior  conforme  previsto em lei.  Individuos  que  executem  tal
+acesso,  utilizam  ou  modificam  este  sistema  sem  previa  autorizacao  estao
+sujeitos a procedimentos  disciplinares e sancoes  penais civis com base em leis
+brasilieiras e  estrangeiras  aplicaveis para tanto. O uso ou  modificacao deste
+sistema sao autorizados apenas a equipe tecnica competente a epoca do acesso.   
+ 
+ 
+************************************ NOTICE ************************************
+NOTICE:   This  is  a  private  system  for  exclusive use by  NET  Servicos  de
+Comunicacao S. A.. Unauthorized   access or  attempted  unauthorized access, are
+considered  illegal acts and these  incidents are  monitored, and their evidence
+are stored in a secure and restricted access  location for later use as provided
+by law. Individuals that  perform such access, use or modify this system without
+prior  authorization  are  subject to  disciplinary  proceedings  and   criminal
+penalties  under  Brazilian and  foreing  laws  applicable to both.  The use  or
+modification of this  system are  allowed only by  technically competent team of
+the season access.
+
+Info: The max number of VTY users is 10, and the number
+      of current VTY users on line is 1.
+      The current login time is 2019-11-15 16:06:59-03:00.
+Info:  First time access.  Failed: 0
+
+<JPADTCRTD01>screen-length 0 temporary
+Info: The configuration takes effect on the current user terminal interface only.
+<JPADTCRTD01>display interface giga 1/0/1 | in rate
+    Last 300 seconds input rate: 251484984 bits/sec, 30823 packets/sec
+    Last 300 seconds output rate: 66523016 bits/sec, 19816 packets/sec
+<JPADTCRTD01>display interface giga 1/0/2 | in rate
+    Last 300 seconds input rate: 480675296 bits/sec, 52803 packets/sec
+    Last 300 seconds output rate: 68132480 bits/sec, 19617 packets/sec
+<JPADTCRTD01>display interface giga 1/0/3 | in rate
+    Last 300 seconds input rate: 306854040 bits/sec, 31889 packets/sec
+    Last 300 seconds output rate: 63347536 bits/sec, 19564 packets/sec
+<JPADTCRTD01>display interface giga 1/0/6 | in rate
+    Last 300 seconds input rate: 456 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 127256 bits/sec, 19 packets/sec
+<JPADTCRTD01>display interface giga 1/0/12 | in rate
+    Last 300 seconds input rate: 376600 bits/sec, 258 packets/sec
+    Last 300 seconds output rate: 824408 bits/sec, 212 packets/sec
+<JPADTCRTD01>display interface giga 1/0/13 | in rate
+    Last 300 seconds input rate: 492008016 bits/sec, 45022 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 1/0/14 | in rate
+    Last 300 seconds input rate: 453084720 bits/sec, 41460 packets/sec
+    Last 300 seconds output rate: 360 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 1/0/15 | in rate
+    Last 300 seconds input rate: 431808088 bits/sec, 39513 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 1/0/16 | in rate
+    Last 300 seconds input rate: 442906736 bits/sec, 40529 packets/sec
+    Last 300 seconds output rate: 360 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 1/0/18 | in rate
+    Last 300 seconds input rate: 1210944 bits/sec, 1904 packets/sec
+    Last 300 seconds output rate: 1483792 bits/sec, 2352 packets/sec
+<JPADTCRTD01>display interface giga 2/0/0 | in rate
+    Last 30 seconds input rate: 4648 bits/sec, 8 packets/sec
+    Last 30 seconds output rate: 474429624 bits/sec, 43547 packets/sec
+<JPADTCRTD01>display interface giga 2/0/1 | in rate
+    Last 30 seconds input rate: 4112 bits/sec, 7 packets/sec
+    Last 30 seconds output rate: 476914528 bits/sec, 43775 packets/sec
+<JPADTCRTD01>display interface giga 2/0/2 | in rate
+    Last 30 seconds input rate: 437184328 bits/sec, 40145 packets/sec
+    Last 30 seconds output rate: 3200 bits/sec, 5 packets/sec
+<JPADTCRTD01>display interface giga 2/0/3 | in rate
+    Last 30 seconds input rate: 483125248 bits/sec, 44339 packets/sec
+    Last 30 seconds output rate: 6272 bits/sec, 11 packets/sec
+<JPADTCRTD01>display interface giga 2/0/8 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 2/0/9 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 2/0/11 | in rate
+    Last 300 seconds input rate: 228202056 bits/sec, 26669 packets/sec
+    Last 300 seconds output rate: 304491080 bits/sec, 93231 packets/sec
+<JPADTCRTD01>display interface giga 2/1/1 | in rate
+    Last 30 seconds input rate: 3770369560 bits/sec, 350239 packets/sec
+    Last 30 seconds output rate: 608405760 bits/sec, 198433 packets/sec
+<JPADTCRTD01>display interface giga 2/1/3 | in rate
+    Last 30 seconds input rate: 2968279408 bits/sec, 324020 packets/sec
+    Last 30 seconds output rate: 2323903312 bits/sec, 280692 packets/sec
+<JPADTCRTD01>display interface giga 3/0/6 | in rate
+    Last 300 seconds input rate: 2751144 bits/sec, 1767 packets/sec
+    Last 300 seconds output rate: 4324800 bits/sec, 864 packets/sec
+<JPADTCRTD01>display interface giga 3/1/5 | in rate
+    Last 300 seconds input rate: 71096 bits/sec, 47 packets/sec
+    Last 300 seconds output rate: 474472 bits/sec, 67 packets/sec
+<JPADTCRTD01>display interface giga 6/0/0 | in rate
+    Last 300 seconds input rate: 263570304 bits/sec, 97830 packets/sec
+    Last 300 seconds output rate: 3175268744 bits/sec, 300482 packets/sec
+<JPADTCRTD01>display interface giga 6/0/1 | in rate
+    Last 300 seconds input rate: 243851008 bits/sec, 99565 packets/sec
+    Last 300 seconds output rate: 3245244360 bits/sec, 308268 packets/sec
+<JPADTCRTD01>display interface giga 6/0/2 | in rate
+    Last 300 seconds input rate: 247243184 bits/sec, 107693 packets/sec
+    Last 300 seconds output rate: 3159067088 bits/sec, 302418 packets/sec
+<JPADTCRTD01>display interface giga 6/0/3 | in rate
+    Last 300 seconds input rate: 5936 bits/sec, 3 packets/sec
+    Last 300 seconds output rate: 6440 bits/sec, 6 packets/sec
+<JPADTCRTD01>display interface giga 6/0/4 | in rate
+    Last 300 seconds input rate: 164067832 bits/sec, 61308 packets/sec
+    Last 300 seconds output rate: 2803238336 bits/sec, 258150 packets/sec
+<JPADTCRTD01>display interface giga 6/0/5 | in rate
+    Last 30 seconds input rate: 3207252112 bits/sec, 281036 packets/sec
+    Last 30 seconds output rate: 1214125984 bits/sec, 143982 packets/sec
+<JPADTCRTD01>display interface giga 6/0/6 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 6/0/7 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 6/0/8 | in rate
+    Last 300 seconds input rate: 146855768 bits/sec, 59717 packets/sec
+    Last 300 seconds output rate: 1896990040 bits/sec, 178432 packets/sec
+<JPADTCRTD01>display interface giga 6/0/9 | in rate
+    Last 300 seconds input rate: 5096784880 bits/sec, 475306 packets/sec
+    Last 300 seconds output rate: 1661823168 bits/sec, 242424 packets/sec
+<JPADTCRTD01>display interface giga 6/0/10 | in rate
+    Last 300 seconds input rate: 3250722704 bits/sec, 297328 packets/sec
+    Last 300 seconds output rate: 1066057480 bits/sec, 140459 packets/sec
+<JPADTCRTD01>display interface giga 6/0/11 | in rate
+    Last 300 seconds input rate: 3551650176 bits/sec, 321663 packets/sec
+    Last 300 seconds output rate: 978013720 bits/sec, 136631 packets/sec
+<JPADTCRTD01>display interface giga 6/1/3 | in rate
+    Last 300 seconds input rate: 68371096 bits/sec, 26113 packets/sec
+    Last 300 seconds output rate: 867227496 bits/sec, 83426 packets/sec
+<JPADTCRTD01>display interface giga 6/1/4 | in rate
+    Last 300 seconds input rate: 2995795816 bits/sec, 250220 packets/sec
+    Last 300 seconds output rate: 25554040 bits/sec, 39071 packets/sec
+<JPADTCRTD01>display interface giga 6/1/5 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 6/1/8 | in rate
+    Last 300 seconds input rate: 145296176 bits/sec, 57453 packets/sec
+    Last 300 seconds output rate: 1997705192 bits/sec, 188459 packets/sec
+<JPADTCRTD01>display interface giga 6/1/9 | in rate
+    Last 300 seconds input rate: 5115499784 bits/sec, 477124 packets/sec
+    Last 300 seconds output rate: 1661856176 bits/sec, 242351 packets/sec
+<JPADTCRTD01>display interface giga 6/1/10 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 6/1/11 | in rate
+    Last 30 seconds input rate: 14464 bits/sec, 21 packets/sec
+    Last 30 seconds output rate: 1853780904 bits/sec, 167207 packets/sec
+<JPADTCRTD01>display interface giga 7/0/10 | in rate
+    Last 30 seconds input rate: 5728 bits/sec, 3 packets/sec
+    Last 30 seconds output rate: 304680 bits/sec, 38 packets/sec
+<JPADTCRTD01>display interface giga 7/0/12 | in rate
+    Last 300 seconds input rate: 445344952 bits/sec, 41173 packets/sec
+    Last 300 seconds output rate: 112731904 bits/sec, 15758 packets/sec
+<JPADTCRTD01>display interface giga 7/0/13 | in rate
+    Last 300 seconds input rate: 426262744 bits/sec, 39092 packets/sec
+    Last 300 seconds output rate: 125571296 bits/sec, 16234 packets/sec
+<JPADTCRTD01>display interface giga 7/0/14 | in rate
+    Last 300 seconds input rate: 443943024 bits/sec, 40858 packets/sec
+    Last 300 seconds output rate: 113288336 bits/sec, 15700 packets/sec
+<JPADTCRTD01>display interface giga 7/0/15 | in rate
+    Last 300 seconds input rate: 437246296 bits/sec, 40291 packets/sec
+    Last 300 seconds output rate: 117241968 bits/sec, 16495 packets/sec
+<JPADTCRTD01>display interface giga 7/0/16 | in rate
+    Last 300 seconds input rate: 412055976 bits/sec, 38109 packets/sec
+    Last 300 seconds output rate: 109631600 bits/sec, 15274 packets/sec
+<JPADTCRTD01>display interface giga 7/0/17 | in rate
+    Last 300 seconds input rate: 415257216 bits/sec, 38333 packets/sec
+    Last 300 seconds output rate: 140528584 bits/sec, 18057 packets/sec
+<JPADTCRTD01>display interface giga 7/0/18 | in rate
+    Last 300 seconds input rate: 414126888 bits/sec, 38354 packets/sec
+    Last 300 seconds output rate: 122900000 bits/sec, 16366 packets/sec
+<JPADTCRTD01>display interface giga 7/0/19 | in rate
+    Last 300 seconds input rate: 415151704 bits/sec, 38622 packets/sec
+    Last 300 seconds output rate: 120864064 bits/sec, 16589 packets/sec
+<JPADTCRTD01>display interface giga 7/0/20 | in rate
+    Last 300 seconds input rate: 431864816 bits/sec, 39851 packets/sec
+    Last 300 seconds output rate: 112525320 bits/sec, 15723 packets/sec
+<JPADTCRTD01>display interface giga 7/0/21 | in rate
+    Last 300 seconds input rate: 399667600 bits/sec, 37255 packets/sec
+    Last 300 seconds output rate: 132767696 bits/sec, 17570 packets/sec
+<JPADTCRTD01>display interface giga 7/0/22 | in rate
+    Last 300 seconds input rate: 443133696 bits/sec, 40759 packets/sec
+    Last 300 seconds output rate: 122985392 bits/sec, 16736 packets/sec
+<JPADTCRTD01>display interface giga 7/0/23 | in rate
+    Last 300 seconds input rate: 384120392 bits/sec, 35692 packets/sec
+    Last 300 seconds output rate: 123581984 bits/sec, 16535 packets/sec
+<JPADTCRTD01>display interface giga 7/0/24 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 127816 bits/sec, 19 packets/sec
+<JPADTCRTD01>display interface giga 7/0/25 | in rate
+    Last 300 seconds input rate: 1248 bits/sec, 1 packets/sec
+    Last 300 seconds output rate: 128688 bits/sec, 20 packets/sec
+<JPADTCRTD01>display interface giga 7/0/26 | in rate
+    Last 300 seconds input rate: 71928 bits/sec, 37 packets/sec
+    Last 300 seconds output rate: 392496 bits/sec, 79 packets/sec
+<JPADTCRTD01>display interface giga 7/0/27 | in rate
+    Last 300 seconds input rate: 4502328 bits/sec, 3625 packets/sec
+    Last 300 seconds output rate: 3468632 bits/sec, 3772 packets/sec
+<JPADTCRTD01>display interface giga 7/0/28 | in rate
+    Last 300 seconds input rate: 14840 bits/sec, 11 packets/sec
+    Last 300 seconds output rate: 142024 bits/sec, 31 packets/sec
+<JPADTCRTD01>display interface giga 7/0/29 | in rate
+    Last 300 seconds input rate: 96 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 127904 bits/sec, 19 packets/sec
+<JPADTCRTD01>display interface giga 7/0/30 | in rate
+    Last 300 seconds input rate: 545078680 bits/sec, 50025 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 7/0/31 | in rate
+    Last 300 seconds input rate: 597085152 bits/sec, 54798 packets/sec
+    Last 300 seconds output rate: 816 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 7/0/32 | in rate
+    Last 300 seconds input rate: 283291992 bits/sec, 25999 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 7/0/33 | in rate
+    Last 300 seconds input rate: 394437840 bits/sec, 36200 packets/sec
+    Last 300 seconds output rate: 64 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 7/0/39 | in rate
+    Last 300 seconds input rate: 1592 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 1744 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/1 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/2 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 15512 bits/sec, 20 packets/sec
+<JPADTCRTD01>display interface giga 8/0/3 | in rate
+    Last 300 seconds input rate: 136 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 126056 bits/sec, 19 packets/sec
+<JPADTCRTD01>display interface giga 8/0/4 | in rate
+    Last 300 seconds input rate: 2452320 bits/sec, 2040 packets/sec
+    Last 300 seconds output rate: 1769536 bits/sec, 2018 packets/sec
+<JPADTCRTD01>display interface giga 8/0/6 | in rate
+    Last 300 seconds input rate: 1160 bits/sec, 1 packets/sec
+    Last 300 seconds output rate: 126696 bits/sec, 20 packets/sec
+<JPADTCRTD01>display interface giga 8/0/7 | in rate
+    Last 300 seconds input rate: 328104 bits/sec, 79 packets/sec
+    Last 300 seconds output rate: 217664 bits/sec, 83 packets/sec
+<JPADTCRTD01>display interface giga 8/0/8 | in rate
+    Last 300 seconds input rate: 31040 bits/sec, 14 packets/sec
+    Last 300 seconds output rate: 213256 bits/sec, 44 packets/sec
+<JPADTCRTD01>display interface giga 8/0/9 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/10 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/11 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/12 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/13 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/14 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/18 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/19 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/22 | in rate
+    Last 300 seconds input rate: 72 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 15568 bits/sec, 20 packets/sec
+<JPADTCRTD01>display interface giga 8/0/25 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/31 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/34 | in rate
+    Last 300 seconds input rate: 304 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 15456 bits/sec, 20 packets/sec
+<JPADTCRTD01>display interface giga 8/0/35 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/37 | in rate
+    Last 30 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 30 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/38 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/39 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>quit
+Info: The max number of VTY users is 10, and the number
+      of current VTY users on line is 0.Connection to 127.0.0.11 closed.
+
+spawn /usr/bin/ssh 127.0.0.11 -l N5669203
+User Authentication
+
+Password: 
+
+************************************ AVISO *************************************
+AVISO:  Este e um  sistema  privado  para  uso  exclusivo  da  NET  Servicos  de
+Comunicacao  S. A..  Acessos   nao  autorizados  ou  tentativas  de  acesso  nao
+autorizado, sao considerados atos  ilicitos e estes incidentes sao  monitorados,
+bem como suas  evidencias sao  armazenadas em local  seguro e de acesso restrito
+para  uso  posterior  conforme  previsto em lei.  Individuos  que  executem  tal
+acesso,  utilizam  ou  modificam  este  sistema  sem  previa  autorizacao  estao
+sujeitos a procedimentos  disciplinares e sancoes  penais civis com base em leis
+brasilieiras e  estrangeiras  aplicaveis para tanto. O uso ou  modificacao deste
+sistema sao autorizados apenas a equipe tecnica competente a epoca do acesso.   
+ 
+ 
+************************************ NOTICE ************************************
+NOTICE:   This  is  a  private  system  for  exclusive use by  NET  Servicos  de
+Comunicacao S. A.. Unauthorized   access or  attempted  unauthorized access, are
+considered  illegal acts and these  incidents are  monitored, and their evidence
+are stored in a secure and restricted access  location for later use as provided
+by law. Individuals that  perform such access, use or modify this system without
+prior  authorization  are  subject to  disciplinary  proceedings  and   criminal
+penalties  under  Brazilian and  foreing  laws  applicable to both.  The use  or
+modification of this  system are  allowed only by  technically competent team of
+the season access.
+
+Info: The max number of VTY users is 10, and the number
+      of current VTY users on line is 1.
+      The current login time is 2019-11-15 16:24:51-03:00.
+Info:  First time access.  Failed: 0
+
+<JPADTCRTD01>screen-length 0 temporary
+Info: The configuration takes effect on the current user terminal interface only.
+<JPADTCRTD01>display interface giga 1/0/1 | in rate
+    Last 300 seconds input rate: 330770320 bits/sec, 37471 packets/sec
+    Last 300 seconds output rate: 74691096 bits/sec, 20378 packets/sec
+<JPADTCRTD01>display interface giga 1/0/2 | in rate
+    Last 300 seconds input rate: 510214184 bits/sec, 56849 packets/sec
+    Last 300 seconds output rate: 68537392 bits/sec, 19334 packets/sec
+<JPADTCRTD01>display interface giga 1/0/3 | in rate
+    Last 300 seconds input rate: 265706760 bits/sec, 29325 packets/sec
+    Last 300 seconds output rate: 72888376 bits/sec, 19069 packets/sec
+<JPADTCRTD01>display interface giga 1/0/6 | in rate
+    Last 300 seconds input rate: 392 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 99704 bits/sec, 17 packets/sec
+<JPADTCRTD01>display interface giga 1/0/12 | in rate
+    Last 300 seconds input rate: 430104 bits/sec, 376 packets/sec
+    Last 300 seconds output rate: 3985368 bits/sec, 447 packets/sec
+<JPADTCRTD01>display interface giga 1/0/13 | in rate
+    Last 300 seconds input rate: 492008944 bits/sec, 45022 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 1/0/14 | in rate
+    Last 300 seconds input rate: 453091096 bits/sec, 41461 packets/sec
+    Last 300 seconds output rate: 360 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 1/0/15 | in rate
+    Last 300 seconds input rate: 431809240 bits/sec, 39514 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 1/0/16 | in rate
+    Last 300 seconds input rate: 442911416 bits/sec, 40529 packets/sec
+    Last 300 seconds output rate: 360 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 1/0/18 | in rate
+    Last 300 seconds input rate: 1342824 bits/sec, 2105 packets/sec
+    Last 300 seconds output rate: 1567504 bits/sec, 2474 packets/sec
+<JPADTCRTD01>display interface giga 2/0/0 | in rate
+    Last 30 seconds input rate: 4656 bits/sec, 8 packets/sec
+    Last 30 seconds output rate: 474428712 bits/sec, 43546 packets/sec
+<JPADTCRTD01>display interface giga 2/0/1 | in rate
+    Last 30 seconds input rate: 4088 bits/sec, 7 packets/sec
+    Last 30 seconds output rate: 476901464 bits/sec, 43774 packets/sec
+<JPADTCRTD01>display interface giga 2/0/2 | in rate
+    Last 30 seconds input rate: 437183544 bits/sec, 40145 packets/sec
+    Last 30 seconds output rate: 3144 bits/sec, 5 packets/sec
+<JPADTCRTD01>display interface giga 2/0/3 | in rate
+    Last 30 seconds input rate: 483125624 bits/sec, 44339 packets/sec
+    Last 30 seconds output rate: 6200 bits/sec, 10 packets/sec
+<JPADTCRTD01>display interface giga 2/0/8 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 2/0/9 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 2/0/11 | in rate
+    Last 300 seconds input rate: 229360616 bits/sec, 27040 packets/sec
+    Last 300 seconds output rate: 287855712 bits/sec, 96386 packets/sec
+<JPADTCRTD01>display interface giga 2/1/1 | in rate
+    Last 30 seconds input rate: 3684695072 bits/sec, 340598 packets/sec
+    Last 30 seconds output rate: 560891336 bits/sec, 190294 packets/sec
+<JPADTCRTD01>display interface giga 2/1/3 | in rate
+    Last 30 seconds input rate: 2096798184 bits/sec, 248043 packets/sec
+    Last 30 seconds output rate: 2324595776 bits/sec, 284098 packets/sec
+<JPADTCRTD01>display interface giga 3/0/6 | in rate
+    Last 300 seconds input rate: 5327728 bits/sec, 1628 packets/sec
+    Last 300 seconds output rate: 4238328 bits/sec, 1000 packets/sec
+<JPADTCRTD01>display interface giga 3/1/5 | in rate
+    Last 300 seconds input rate: 53936 bits/sec, 24 packets/sec
+    Last 300 seconds output rate: 52144 bits/sec, 28 packets/sec
+<JPADTCRTD01>display interface giga 6/0/0 | in rate
+    Last 300 seconds input rate: 237163288 bits/sec, 97907 packets/sec
+    Last 300 seconds output rate: 3353259120 bits/sec, 315872 packets/sec
+<JPADTCRTD01>display interface giga 6/0/1 | in rate
+    Last 300 seconds input rate: 228423472 bits/sec, 101204 packets/sec
+    Last 300 seconds output rate: 3445110696 bits/sec, 325409 packets/sec
+<JPADTCRTD01>display interface giga 6/0/2 | in rate
+    Last 300 seconds input rate: 258704808 bits/sec, 111421 packets/sec
+    Last 300 seconds output rate: 3367423232 bits/sec, 319233 packets/sec
+<JPADTCRTD01>display interface giga 6/0/3 | in rate
+    Last 300 seconds input rate: 5208 bits/sec, 2 packets/sec
+    Last 300 seconds output rate: 5888 bits/sec, 5 packets/sec
+<JPADTCRTD01>display interface giga 6/0/4 | in rate
+    Last 300 seconds input rate: 143667232 bits/sec, 56344 packets/sec
+    Last 300 seconds output rate: 2578076992 bits/sec, 237562 packets/sec
+<JPADTCRTD01>display interface giga 6/0/5 | in rate
+    Last 30 seconds input rate: 3517813776 bits/sec, 307804 packets/sec
+    Last 30 seconds output rate: 1331723608 bits/sec, 160248 packets/sec
+<JPADTCRTD01>display interface giga 6/0/6 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 6/0/7 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 6/0/8 | in rate
+    Last 300 seconds input rate: 156975928 bits/sec, 62827 packets/sec
+    Last 300 seconds output rate: 1940109760 bits/sec, 183237 packets/sec
+<JPADTCRTD01>display interface giga 6/0/9 | in rate
+    Last 300 seconds input rate: 5125579936 bits/sec, 478206 packets/sec
+    Last 300 seconds output rate: 1666611224 bits/sec, 242223 packets/sec
+<JPADTCRTD01>display interface giga 6/0/10 | in rate
+    Last 300 seconds input rate: 3291771528 bits/sec, 299154 packets/sec
+    Last 300 seconds output rate: 1024377800 bits/sec, 137644 packets/sec
+<JPADTCRTD01>display interface giga 6/0/11 | in rate
+    Last 300 seconds input rate: 3599562048 bits/sec, 325651 packets/sec
+    Last 300 seconds output rate: 991166032 bits/sec, 138938 packets/sec
+<JPADTCRTD01>display interface giga 6/1/3 | in rate
+    Last 300 seconds input rate: 68651296 bits/sec, 28359 packets/sec
+    Last 300 seconds output rate: 887918800 bits/sec, 84752 packets/sec
+<JPADTCRTD01>display interface giga 6/1/4 | in rate
+    Last 300 seconds input rate: 3208914176 bits/sec, 267947 packets/sec
+    Last 300 seconds output rate: 27108632 bits/sec, 41386 packets/sec
+<JPADTCRTD01>display interface giga 6/1/5 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 6/1/8 | in rate
+    Last 300 seconds input rate: 147490808 bits/sec, 58700 packets/sec
+    Last 300 seconds output rate: 2053169000 bits/sec, 192809 packets/sec
+<JPADTCRTD01>display interface giga 6/1/9 | in rate
+    Last 300 seconds input rate: 5095664808 bits/sec, 474021 packets/sec
+    Last 300 seconds output rate: 1666323736 bits/sec, 242152 packets/sec
+<JPADTCRTD01>display interface giga 6/1/10 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 6/1/11 | in rate
+    Last 30 seconds input rate: 14408 bits/sec, 21 packets/sec
+    Last 30 seconds output rate: 1853807992 bits/sec, 167210 packets/sec
+<JPADTCRTD01>display interface giga 7/0/10 | in rate
+    Last 30 seconds input rate: 1600 bits/sec, 1 packets/sec
+    Last 30 seconds output rate: 37064 bits/sec, 17 packets/sec
+<JPADTCRTD01>display interface giga 7/0/12 | in rate
+    Last 300 seconds input rate: 458936776 bits/sec, 41633 packets/sec
+    Last 300 seconds output rate: 112520816 bits/sec, 16062 packets/sec
+<JPADTCRTD01>display interface giga 7/0/13 | in rate
+    Last 300 seconds input rate: 420696832 bits/sec, 38610 packets/sec
+    Last 300 seconds output rate: 119315632 bits/sec, 15934 packets/sec
+<JPADTCRTD01>display interface giga 7/0/14 | in rate
+    Last 300 seconds input rate: 427347768 bits/sec, 39320 packets/sec
+    Last 300 seconds output rate: 110051328 bits/sec, 15602 packets/sec
+<JPADTCRTD01>display interface giga 7/0/15 | in rate
+    Last 300 seconds input rate: 416253880 bits/sec, 38515 packets/sec
+    Last 300 seconds output rate: 112190824 bits/sec, 15897 packets/sec
+<JPADTCRTD01>display interface giga 7/0/16 | in rate
+    Last 300 seconds input rate: 454584960 bits/sec, 41009 packets/sec
+    Last 300 seconds output rate: 108887024 bits/sec, 15438 packets/sec
+<JPADTCRTD01>display interface giga 7/0/17 | in rate
+    Last 300 seconds input rate: 451298176 bits/sec, 41734 packets/sec
+    Last 300 seconds output rate: 123171264 bits/sec, 16690 packets/sec
+<JPADTCRTD01>display interface giga 7/0/18 | in rate
+    Last 300 seconds input rate: 445490384 bits/sec, 40820 packets/sec
+    Last 300 seconds output rate: 109609088 bits/sec, 15809 packets/sec
+<JPADTCRTD01>display interface giga 7/0/19 | in rate
+    Last 300 seconds input rate: 424644880 bits/sec, 39340 packets/sec
+    Last 300 seconds output rate: 126821064 bits/sec, 16975 packets/sec
+<JPADTCRTD01>display interface giga 7/0/20 | in rate
+    Last 300 seconds input rate: 410498696 bits/sec, 38001 packets/sec
+    Last 300 seconds output rate: 101390584 bits/sec, 15440 packets/sec
+<JPADTCRTD01>display interface giga 7/0/21 | in rate
+    Last 300 seconds input rate: 422932024 bits/sec, 38884 packets/sec
+    Last 300 seconds output rate: 119723936 bits/sec, 16262 packets/sec
+<JPADTCRTD01>display interface giga 7/0/22 | in rate
+    Last 300 seconds input rate: 412490360 bits/sec, 38259 packets/sec
+    Last 300 seconds output rate: 132907744 bits/sec, 17781 packets/sec
+<JPADTCRTD01>display interface giga 7/0/23 | in rate
+    Last 300 seconds input rate: 422131176 bits/sec, 39092 packets/sec
+    Last 300 seconds output rate: 120582016 bits/sec, 16381 packets/sec
+<JPADTCRTD01>display interface giga 7/0/24 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 98696 bits/sec, 17 packets/sec
+<JPADTCRTD01>display interface giga 7/0/25 | in rate
+    Last 300 seconds input rate: 1328 bits/sec, 1 packets/sec
+    Last 300 seconds output rate: 99600 bits/sec, 18 packets/sec
+<JPADTCRTD01>display interface giga 7/0/26 | in rate
+    Last 300 seconds input rate: 68840 bits/sec, 37 packets/sec
+    Last 300 seconds output rate: 358336 bits/sec, 75 packets/sec
+<JPADTCRTD01>display interface giga 7/0/27 | in rate
+    Last 300 seconds input rate: 4426624 bits/sec, 3566 packets/sec
+    Last 300 seconds output rate: 3361352 bits/sec, 3710 packets/sec
+<JPADTCRTD01>display interface giga 7/0/28 | in rate
+    Last 300 seconds input rate: 13592 bits/sec, 10 packets/sec
+    Last 300 seconds output rate: 113392 bits/sec, 27 packets/sec
+<JPADTCRTD01>display interface giga 7/0/29 | in rate
+    Last 300 seconds input rate: 96 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 98776 bits/sec, 17 packets/sec
+<JPADTCRTD01>display interface giga 7/0/30 | in rate
+    Last 300 seconds input rate: 545082560 bits/sec, 50025 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 7/0/31 | in rate
+    Last 300 seconds input rate: 597087768 bits/sec, 54798 packets/sec
+    Last 300 seconds output rate: 832 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 7/0/32 | in rate
+    Last 300 seconds input rate: 283294016 bits/sec, 25999 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 7/0/33 | in rate
+    Last 300 seconds input rate: 394440848 bits/sec, 36200 packets/sec
+    Last 300 seconds output rate: 72 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 7/0/39 | in rate
+    Last 300 seconds input rate: 1576 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 1792 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/1 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/2 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 15504 bits/sec, 20 packets/sec
+<JPADTCRTD01>display interface giga 8/0/3 | in rate
+    Last 300 seconds input rate: 80 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 99872 bits/sec, 17 packets/sec
+<JPADTCRTD01>display interface giga 8/0/4 | in rate
+    Last 300 seconds input rate: 2408536 bits/sec, 2004 packets/sec
+    Last 300 seconds output rate: 1716328 bits/sec, 1986 packets/sec
+<JPADTCRTD01>display interface giga 8/0/6 | in rate
+    Last 300 seconds input rate: 1168 bits/sec, 1 packets/sec
+    Last 300 seconds output rate: 100568 bits/sec, 18 packets/sec
+<JPADTCRTD01>display interface giga 8/0/7 | in rate
+    Last 300 seconds input rate: 256440 bits/sec, 75 packets/sec
+    Last 300 seconds output rate: 428680 bits/sec, 92 packets/sec
+<JPADTCRTD01>display interface giga 8/0/8 | in rate
+    Last 300 seconds input rate: 418424 bits/sec, 54 packets/sec
+    Last 300 seconds output rate: 231592 bits/sec, 64 packets/sec
+<JPADTCRTD01>display interface giga 8/0/9 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/10 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/11 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/12 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/13 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/14 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/18 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/19 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/22 | in rate
+    Last 300 seconds input rate: 72 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 15552 bits/sec, 20 packets/sec
+<JPADTCRTD01>display interface giga 8/0/25 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/31 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/34 | in rate
+    Last 300 seconds input rate: 304 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 15448 bits/sec, 20 packets/sec
+<JPADTCRTD01>display interface giga 8/0/35 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/37 | in rate
+    Last 30 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 30 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/38 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>display interface giga 8/0/39 | in rate
+    Last 300 seconds input rate: 0 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bits/sec, 0 packets/sec
+<JPADTCRTD01>quit
+Info: The max number of VTY users is 10, and the number
+      of current VTY users on line is 0.Connection to 127.0.0.11 closed.
+
