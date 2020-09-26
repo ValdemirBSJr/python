@@ -148,8 +148,8 @@ if __name__ == '__main__':
     if retorno_de_fontes != '':
 
         # telegram info's
-        telegram_token = '968544301:AAEwL77TdF0j7ECUmzNgPEBsbo7XPWMKoO4'
-        chat_id = '-1001343801249'
+        telegram_token = 'TOKEN'
+        chat_id = '-CHAT_ID'
 
         # crea o objeto bot para mandar as fontes
         bot = telegram.Bot(token=telegram_token)
