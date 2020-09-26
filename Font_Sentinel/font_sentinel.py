@@ -1,4 +1,4 @@
-#!/home/datacenter/.virtualenvs/k36/bin/python
+#!/home/bin/python
 # -*- coding: utf-8 -*-
 # Author: Valdemir Bezerra
 
