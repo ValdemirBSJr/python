@@ -1,4 +1,4 @@
-#!/home/bin/python
+#!/home/env python3
 # -*- coding: utf-8 -*-
 # Author: Valdemir Bezerra
 
