@@ -1,4 +1,4 @@
-#!/home/valdemir/Documentos/PYTHON-PROJETOS/verificador_de_portas/venv/bin/python /home/valdemir/Documentos/PYTHON-PROJETOS/verificador_de_portas/main.py
+#!/home/env python3
 # -*- coding: utf-8 -*-
 #Author: Valdemir Bezerra
 
