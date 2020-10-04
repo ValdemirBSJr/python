@@ -1,0 +1,35 @@
+from collections import UserDict, defaultdict
+
+class Lista_Site_Fontes(UserDict):
+
+    '''
+    Instanciamos todas os sites das fontes
+    :parameter key >>> chave das fontes
+    :param value >>> valores que contem os endereços
+    '''
+
+    __slots__ = ['_key', '_value']
+
+    def __contains__(self, _key):
+        return str(_key) in self.keys()
+
+    def __setitem__(self, _key, _value):
+        self.data[str(_key)] = _value
+
+
+
+
+
+if __name__ == '__main__':
+
+    classeObj = Lista_Site_Fontes(um=1)
+    print(classeObj)
+
+    cores = [('TSA', 'tsasite'),('JPA', 'jpasite'),('CGE','cgesite')]
+
+    cores_favoritas = defaultdict(list)
+
+    for chave, valor in cores:
+        cores_favoritas[chave].append(valor)
+
+    print(cores_favoritas)
