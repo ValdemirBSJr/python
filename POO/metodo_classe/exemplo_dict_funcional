@@ -1,0 +1,35 @@
+class Lista_Site_Fontes:
+
+    '''
+    Instanciamos todas os sites das fontes
+    :parameter chave >>> chave das fontes
+    :param valor >>> valores que contem os endereços
+    '''
+
+    def __getitem__(self, key):
+        return getattr(self, key)
+
+    def __setitem__(self, key, value):
+        setattr(self, key, value)
+
+    def __repr__(self):
+        return repr(self.__dict__)
+
+    def update(self, *args, **kwargs):
+        return self.__dict__.update(*args, **kwargs)
+
+
+
+
+if __name__ == '__main__':
+
+
+
+    objeto = Lista_Site_Fontes()
+    objeto['chave'] = 'valor'
+
+    lista = {'jpa': 'jpalist', 'tsa': 'tsalista'}
+
+    objeto.update(lista)
+
+    print(objeto)
