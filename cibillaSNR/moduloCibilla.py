@@ -39,7 +39,7 @@ def consult_ldap(client):
         # Init Bind to server
         conn.bind()
         # Search in ldap database
-        conn.search('dc=packgate_docsis', f'(&(docsiscontrato={client})(docsisclientclass=Virtua))',
+        conn.search('dc=packgate_docsis', f'(&(docsiscontrato={client})(docsisclientclass=classOfcliienta))',
                     attributes=['docsisclientclass', 'docsismodemmacaddress', 'docsispolicyname', 'docsiscontrato'])
 
         if len(conn.entries) != 0:
