@@ -1,4 +1,4 @@
-#!/home/valdemir/Documentos/PYTHON-PROJETOS/fonte_sentinela/venv/bin/python /home/valdemir/Documentos/PYTHON-PROJETOS/fonte_sentinela/main.py
+#!/home/PC/Documents/fonte_sentinela/venv/bin/python /home/PC/Documents/fonte_sentinela/main.py
 # -*- coding: utf-8 -*-
 # Author: Valdemir Bezerra
 
@@ -14,8 +14,8 @@ from datetime import datetime
 from modulos_fontes_sentinela import Lista_Site_Fontes
 from modulo_shelve import Manipula_shelve, Log_errors
 
-COMPLEMENTO_CAMINHO = 'nagios_fontes/cgi-bin/status.cgi?host=all&servicestatustypes=28'
-COMPLEMENTO_DETALHADO_FONTES = 'nagios_fontes/cgi-bin/'
+COMPLEMENTO_CAMINHO = 'LINK_TO_COMPLETE'
+COMPLEMENTO_DETALHADO_FONTES = 'DETAILS'
 
 
 
@@ -169,13 +169,8 @@ if __name__ == '__main__':
 
 
     lista = {
-        'RCE': 'http://fontes.rce.virtua.com.br/',
-        'NTL': 'http://fontes.ntl.virtua.com.br/',
-        'MCO': 'http://fontes.mco.virtua.com.br/',
-        'JPA': 'http://fontes.jpa.virtua.com.br/',
-        'CGE': 'http://fontes.cge.virtua.com.br/',
-        'FLA': 'http://fontes.fla.virtua.com.br/',
-        'TSA': 'http://fontes.tsa.virtua.com.br/',
+        'CITY': 'http://path.site.com/',
+
     }
 
     listar_site_fontes = Lista_Site_Fontes()
@@ -192,8 +187,8 @@ if __name__ == '__main__':
     elif fontes_fora != '' and len(fontes_fora) != 43:
 
         # telegram info's
-        telegram_token = '1336158346:AAFtzAyRoApH-2saZKL6eiTEw9Na6LW0ZOc'
-        chat_id = '-1001309872245'
+        telegram_token = 'ID_BOT'
+        chat_id = '-ID_CHAT'
 
         # cria o objeto bot para mandar as fontes
         bot = telegram.Bot(token=telegram_token)
