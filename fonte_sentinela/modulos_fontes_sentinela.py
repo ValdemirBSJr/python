@@ -1,4 +1,4 @@
-#/home/valdemir/Documentos/PYTHON-PROJETOS/fonte_sentinela/venv/bin/python /home/valdemir/Documentos/PYTHON-PROJETOS/fonte_sentinela/main.py
+#!/home/PC/Documents/fonte_sentinela/venv/bin/python /home/PC/Documents/fonte_sentinela/main.py
 # -*- coding: utf-8 -*-
 # Author: Valdemir Bezerra
 
