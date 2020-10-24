@@ -72,13 +72,8 @@ if __name__ == '__main__':
     #objeto['chave'] = 'valor'
 
     lista = {
-        'RCE': 'http://fontes.rce.virtua.com.br/',
-        'NTL': 'http://fontes.ntl.virtua.com.br/',
-        'MCO': 'http://fontes.mco.virtua.com.br/',
-        'JPA': 'http://fontes.jpa.virtua.com.br/',
-        'CGE': 'http://fontes.cge.virtua.com.br/',
-        'FLA': 'http://fontes.fla.virtua.com.br/',
-        'TSA': 'http://fontes.tsa.virtua.com.br/',
+        'CITY': 'http://site.path.com/',
+
     }
 
     objeto.popular(lista)
