@@ -37,7 +37,7 @@ def pega_consumo(ip_cmts:str, sigla_cidade: str) -> list:
 
         print(f'Tentando consulta no CMTS {ip_cmts}...')
 
-        get_Consumo_up = subprocess.getoutput(f'snmpwalk -v2c -c 3mbr@t3l {ip_cmts} SNMPv2-SMI::transmission.127.1.3.9.1.3')
+        get_Consumo_up = subprocess.getoutput(f'snmpwalk -v2c -c public {ip_cmts} SNMPv2-SMI::transmission.127.1.3.9.1.3')
         #tentar tbm a community n0cn3t
         print(f'Consulta trouxe {len(get_Consumo_up)} linhas')
 
@@ -182,7 +182,7 @@ if __name__ == '__main__':
     footer_da_pagina = body_html.add(footer(_class='page-footer font-small gray'))
     with footer_da_pagina:
         with div(_class='footer-copyright text-center py-3'):
-            a('Desenvolvido por N5669203', href='mailto:valdemir.junior2@claro.com.br', _class='text-muted')
+            a('Desenvolvido por mim', href='mailto:email@me.com.br', _class='text-muted')
 
 
 
