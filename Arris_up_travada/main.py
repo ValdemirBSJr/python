@@ -62,11 +62,11 @@ def pega_consumo(ip_cmts:str, sigla_cidade: str) -> list:
         up_coleta_valida = interface_up[8].strip() # 129 para True
 
         if up_coleta_valida == '129' and (consumo_up >= 70 and consumo_up <= 79):
-            ate_80.append(f'http://gerencia.{sigla_cidade}.virtua.com.br/nagios/noc/graficos/php/util_{ip_cmts}_{interface_up_individual}.php')
+            ate_80.append(f'http://path.{sigla_cidade}.site.com/nagios/noc/graficos/php/util_{ip_cmts}_{interface_up_individual}.php')
         elif up_coleta_valida == '129' and (consumo_up >= 80 and consumo_up <= 89):
-            ate_90.append(f'http://gerencia.{sigla_cidade}.virtua.com.br/nagios/noc/graficos/php/util_{ip_cmts}_{interface_up_individual}.php')
+            ate_90.append(f'http://path.{sigla_cidade}.site.com/nagios/noc/graficos/php/util_{ip_cmts}_{interface_up_individual}.php')
         elif up_coleta_valida == '129' and (consumo_up >= 90):
-            acima_90.append(f'http://gerencia.{sigla_cidade}.virtua.com.br/nagios/noc/graficos/php/util_{ip_cmts}_{interface_up_individual}.php')
+            acima_90.append(f'http://path.{sigla_cidade}.site.com/nagios/noc/graficos/php/util_{ip_cmts}_{interface_up_individual}.php')
 
     return ate_80, ate_90, acima_90
 
