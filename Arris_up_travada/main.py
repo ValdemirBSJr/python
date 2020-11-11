@@ -37,7 +37,7 @@ def pega_consumo(ip_cmts:str, sigla_cidade: str) -> list:
 
         print(f'Tentando consulta no CMTS {ip_cmts}...')
 
-        get_Consumo_up = subprocess.getoutput(f'snmpwalk -v2c -c public {ip_cmts} SNMPv2-SMI::transmission.127.1.3.9.1.3')
+        get_Consumo_up = subprocess.getoutput(f'snmpwalk -v2c -c public {ip_cmts} <<MIB>>')
         #tentar tbm a community n0cn3t
         print(f'Consulta trouxe {len(get_Consumo_up)} linhas')
 
