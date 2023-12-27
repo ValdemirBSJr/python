@@ -90,3 +90,10 @@ vergonha_de_ser_mais_barato = {
 }
 #se o valor do carro for abaixo de 1 milhao nao coloca o valor
 print(vergonha_de_ser_mais_barato)
+
+numeros = {numero for numero in range(0,11)}
+chaves = ['pares', 'impares']
+filtros = {chaves[0]: {numero for numero in numeros if not numero % 2}}
+filtros[chaves[1]] = {numero for numero in numeros if numero % 2}
+
+print(filtros)
