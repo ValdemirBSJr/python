@@ -96,4 +96,11 @@ chaves = ['pares', 'impares']
 filtros = {chaves[0]: {numero for numero in numeros if not numero % 2}}
 filtros[chaves[1]] = {numero for numero in numeros if numero % 2}
 
+#filtros.setdefault(chaves[1], {numero for numero in numeros if numero % 2})
+
+#filtros = {
+#    keys[0]: {numero for numero in numeros if not numero % 2},
+#    keys[1]: {numero for numero in numeros if numero % 2}
+#}
+
 print(filtros)
