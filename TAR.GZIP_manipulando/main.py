@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import shutil
 import requests
 import tarfile
 from datetime import datetime
@@ -17,6 +18,7 @@ LISTA_OLT = [
 ]
 
 DATA_ATUAL_CAMINHO = datetime.now().strftime('%d.%m.%Y')
+DATA_PASTA_GZIP = datetime.now().strftime('%Y-%m-%d-05-00-00')
 
 def verifica_pagina(url: str) -> bool:
     '''
@@ -57,12 +59,16 @@ def baixa_tar(url: str):
 
 def descompacta_gzip(nome_arquivo: str):
     '''
-    funcao de teste nao usado em producao. Apenas para descompactar o gzip baixado.
+    Descompacta o gzip com nossos equipamentos e salva na pasta.
     :param nome_arquivo: nome do arquivo gzip baixado do dia
     '''
     with tarfile.open(str(DIRETORIO / nome_arquivo), 'r:gz') as gzip_entrada:
         #descompacta tudo obedecendo a hierarquia das pastas
-        gzip_entrada.extractall()
+        gzip_entrada.extractall(path=str(DIRETORIO / f'BKP'))
+        os.rename(str(DIRETORIO / r'BKP' / r'home/ftpdir/uni/conf' / DATA_PASTA_GZIP), str(DIRETORIO / r'BKP' / DATA_PASTA_GZIP))
+        gzip_entrada.close()
+        os.remove(nome_arquivo)
+        shutil.rmtree(str(DIRETORIO / r'BKP' / r'home/'))
 
 def le_gzip(nome_arquivo: str):
     '''
@@ -113,7 +119,12 @@ def filtra_olts(nome_arquivo: str, lista_olts: list):
             os.remove(str(DIRETORIO / nome_arquivo))
 
             #move para a pasta final
-            os.rename(str(DIRETORIO / f'backup_{DATA_ATUAL_CAMINHO}.tar.gz'), str(DIRETORIO / f'BKP/backup_{DATA_ATUAL_CAMINHO}.tar.gz'))
+            os.rename(str(DIRETORIO / f'backup{DATA_ATUAL_CAMINHO}.tar.gz'), str(DIRETORIO / f'BKP/backup{DATA_ATUAL_CAMINHO}.tar.gz'))
+
+            #agora vamos descompactar e renomear cada arquivo
+            print('Descompactando os arquivos...', end='\n\n')
+            descompacta_gzip(str(DIRETORIO / f'BKP/backup{DATA_ATUAL_CAMINHO}.tar.gz'))
+
             print('SCRIPT FINALIZADO!!!!')
 
 
