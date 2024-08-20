@@ -123,3 +123,19 @@ itens_repetidos = [item for item in lista1 if item in lista2]
 caminhos_dos_arquivos = ['/home/caminho/arquivo1', '/home/caminho/arquivo2']
 caminho_splitado = [caminho.split('/') for caminho in caminhos_dos_arquivos]
 nome_formatado = [str(formatado[1] + '-> Número do arquivo: ' + formatado[3][-1]) for formatado in caminho_splitado]
+
+carros = {
+    'sandero': {'TIPO': 'popular', 'ANO': 2017},
+    'camaro': {'TIPO': 'esportivo', 'ANO': 2020}, 
+    'onix': {'TIPO': 'popular', 'ANO': 2021}, 
+}
+
+lista_montada_formatada = [f'{carro}: Ano de fabricação: {dado["ANO"]}. Estilo: {dado["TIPO"]}' for carro, dado in carros.items()]
+
+# listando todos arquivos de 4 pastas, pegando caminho completo:
+pastas = ['/home/caminho/pasta1', '/home/caminho/pasta2']
+caminho_completo_arquivos_presentes = [os.path.join(pasta, arquivo)
+                      for pasta in pastas
+                      for arquivo in os.listdir(pasta)
+                      if os.path.isfile(os.path.join(pasta, arquivo))]
+
