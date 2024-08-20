@@ -105,7 +105,7 @@ filtros[chaves[1]] = {numero for numero in numeros if numero % 2}
 
 print(filtros)
 
-
+######################################################################################################
 servidores = {'192.168.0.1': {'SERVICO': 'PRI', 'HOSTNAME': 'localhost', 'MODELO': 'x86'}}
 caminho = 'C:\\Users\\Usuario\\Documents\\PycharmProjects\\whatchdog_pgp\\pasta_pra_onde_vai\\'
 data_atual = datetime.now()
@@ -113,3 +113,13 @@ pasta_mes = data_atual.strftime('%B-%Y').upper()
 pasta_dia = data_atual.strftime('%d.%m.%Y')
 data_arquivo = data_atual.strftime('%Y%m%d')
 caminho_completo_arquivos_esperados = [f'{caminho}log_{valor["SERVICO"]}\\{pasta_mes}\\{pasta_dia}\\{data_arquivo}_{chave}.txt' for chave, valor in servidores.items()]
+
+lista1 = ['1', '2', '3']
+lista2 = ['1', '4', '6']
+
+itens_faltando = [item for item in lista1 if item not in lista2]
+itens_repetidos = [item for item in lista1 if item in lista2]
+
+caminhos_dos_arquivos = ['/home/caminho/arquivo1', '/home/caminho/arquivo2']
+caminho_splitado = [caminho.split('/') for caminho in caminhos_dos_arquivos]
+nome_formatado = [str(formatado[1] + '-> Número do arquivo: ' + formatado[3][-1]) for formatado in caminho_splitado]
