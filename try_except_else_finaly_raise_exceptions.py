@@ -68,4 +68,33 @@ finally:
     print("Execução finalizada.")
 
 
+#Para gerar uma exceção e parar a execução do código, utilizamos a palavra-chave raise. 
+#Isso nos permite lançar uma exceção em qualquer ponto do nosso código, interrompendo sua execução imediatamente.
+def dividir(a, b):
+    if b == 0:
+        raise ValueError("O divisor não pode ser zero!")
+    return a / b
+
+try:
+    resultado = dividir(10, 0)
+    print(resultado)
+    
+except ValueError as e:
+    print(f"Erro: {e}")
+
+#podemos criar nossas próprias exceções personalizadas
+class DivisaoPorZeroError(Exception):
+    def __init__(self, mensagem):
+        self.mensagem = mensagem
+        super().__init__(self.mensagem)
+
+def dividir(a, b):
+    if b == 0:
+        raise DivisaoPorZeroError("Não é possível dividir por zero!")
+    return a / b
+
+try:
+    resultado = dividir(10, 0)
+except DivisaoPorZeroError as e:
+    print(f"Erro: {e.mensagem}")
 
