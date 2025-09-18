@@ -69,7 +69,7 @@ wheels = [
 ]
 
 [[package]]
-name = "groq-teste"
+name = "zabbix_assist_groq"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
