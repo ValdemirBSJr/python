@@ -1,0 +1,13 @@
+[project]
+name = "groq-teste"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.13"
+dependencies = [
+    "groq>=0.31.1",
+    "pytest>=8.4.2",
+    "pytest-mock>=3.15.1",
+    "python-dotenv>=1.1.1",
+    "redis>=6.4.0",
+    "uv>=0.8.17",
+]
