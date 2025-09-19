@@ -70,9 +70,8 @@ argsfile /var/run/slapd/slapd.args
 loglevel 256
 ```
 
-#=======================================================================
 # DEFINIÇÃO DO BANCO DE DADOS LOCAL
-#=======================================================================
+
 ```bash
 database mdb
 suffix "dc=user,dc=group"
@@ -141,4 +140,5 @@ ATRIBUTOS_PARA_COPIAR="uid,cn,sn,givenName,mail,userPassword,displayName"
 
 # Cria o ambiente virtual (geralmente em ./.venv) e instala todas as dependências
 `uv sync`
+
 
