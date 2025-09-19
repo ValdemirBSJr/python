@@ -20,13 +20,13 @@ O script foca em coletar apenas os atributos essenciais dos usuários e replicá
 
 ## Estrutura do Projeto
 
-.
-├── .env                  # Arquivo de variáveis de ambiente (credenciais, URLs)
-├── config.py             # Módulo Python para carregar e validar as configurações do .env.
-├── sincronizador.py      # Script principal contendo a lógica de coleta e sincronização LDAP.
-├── requirements.txt      # Lista de dependências Python para o 'uv'.
-├── .gitignore            # Define quais arquivos/pastas o Git deve ignorar.
-└── README.md             # Este arquivo, com informações sobre o projeto.
+* .
+    * `.env`
+    * `config.py`
+    * `sincronizador.py`
+    * `requirements.txt`
+    * `.gitignore`
+    * `README.md`     
 
 
 ## Pré-requisitos
@@ -118,4 +118,5 @@ userPassword: pass_slapd # **Substitua pela sua senha real**
 
 # Cria o ambiente virtual (geralmente em ./.venv) e instala todas as dependências
 uv sync
+
 
