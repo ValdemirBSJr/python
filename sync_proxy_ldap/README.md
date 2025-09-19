@@ -20,7 +20,6 @@ O script foca em coletar apenas os atributos essenciais dos usuários e replicá
 
 ## Estrutura do Projeto
 
-* .
     * `.env`
     * `config.py`
     * `sincronizador.py`
@@ -44,21 +43,21 @@ SERVIDORES_ORIGEM="10.0.0.1,10.0.0.2
 USUARIO_ORIGEM="CN=proxyagent,DC=dcExample"
 SENHA_ORIGEM="origin_passwd"
 BASE_DN_ORIGEM="ou=people,dc=user,dc=group"
-FILTRO_BUSCA_ORIGEM="(&(objectClass=posixAccount)(uid=*))" # Filtro LDAP para buscar usuários
+FILTRO_BUSCA_ORIGEM="(&(objectClass=posixAccount)(uid=*))"
 
 # --- Configuração do Servidor de Destino (seu slapd local ou outro LDAP proxy) ---
-URI_SERVIDOR_DESTINO="ldap://localhost:389" # Endereço do seu servidor LDAP de destino
+URI_SERVIDOR_DESTINO="ldap://localhost:389"
 USUARIO_ADMIN_DESTINO="cn=admin,dc=user,dc=group"
-SENHA_ADMIN_DESTINO="pass_slapd" # Senha do usuário administrador do LDAP de destino
-BASE_DN_DESTINO="dc=user,dc=group" # Base DN onde os usuários serão criados/atualizados no destino
+SENHA_ADMIN_DESTINO="pass_slapd"
+BASE_DN_DESTINO="dc=user,dc=group"
 
 # --- Atributos a serem copiados da origem para o destino ---
 # Liste os atributos desejados, separados por vírgula, sem espaços.
 ATRIBUTOS_PARA_COPIAR="uid,cn,sn,givenName,mail,userPassword,displayName"
 
 # Instala o servidor OpenLDAP e utilitários
-sudo apt update
-sudo apt install slapd ldap-utils slapd-contrib python3-ldap3 -y
+`sudo apt update`
+`sudo apt install slapd ldap-utils slapd-contrib python3-ldap3 -y`
 
 # /etc/ldap/slapd.conf
 
@@ -87,7 +86,7 @@ suffix "dc=user,dc=group"
 directory /var/lib/ldap
 # O usuário administrador deste servidor local (a senha é definida com ldappasswd ou no LDIF)
 rootdn "cn=admin,dc=user,dc=group"
-rootpw {SSHA}HASH_DA_SENHA # **Substitua por um hash SSHA real da sua senha**
+rootpw {SSHA}HASH_DA_SENHA
 # Alternativamente, a senha pode ser definida no arquivo LDIF de inicialização, como no seu exemplo.
 # Para gerar um hash SSHA de 'pass_slapd':
 # echo -n "pass_slapd" | slappasswd -s "" -h {SSHA}
@@ -111,12 +110,11 @@ dn: cn=admin,dc=user,dc=group
 objectClass: simpleSecurityObject
 objectClass: organizationalRole
 cn: admin
-userPassword: pass_slapd # **Substitua pela sua senha real**
+userPassword: pass_slapd
 
 * **Cria o ambiente virtual e instala todas as dependências**:
 `uv sync`
 
 # Cria o ambiente virtual (geralmente em ./.venv) e instala todas as dependências
-uv sync
-
+`uv sync`
 
