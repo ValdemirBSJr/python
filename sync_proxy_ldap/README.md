@@ -26,6 +26,7 @@ O script foca em coletar apenas os atributos essenciais dos usuários e replicá
 
 ## Estrutura do Projeto
 
+```bash
 .
 ├── .env
 ├── config.py
@@ -33,6 +34,7 @@ O script foca em coletar apenas os atributos essenciais dos usuários e replicá
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
 ---
 
@@ -117,7 +119,7 @@ ldapadd -x -D "cn=admin,dc=user,dc=group" -W -f init.ldif
 
 ## Arquivo .env:
 
-
+```bash
 SERVIDORES_ORIGEM="10.0.0.1,10.0.0.2"
 USUARIO_ORIGEM="CN=proxyagent,DC=dcExample"
 SENHA_ORIGEM="origin_passwd"
@@ -132,9 +134,11 @@ BASE_DN_DESTINO="dc=user,dc=group"
 
 
 ATRIBUTOS_PARA_COPIAR="uid,cn,sn,givenName,mail,userPassword,displayName"
+```
 
 # Cria o ambiente virtual e instala todas as dependências:
 `uv sync`
 
 # Cria o ambiente virtual (geralmente em ./.venv) e instala todas as dependências
 `uv sync`
+
