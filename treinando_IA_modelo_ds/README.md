@@ -19,8 +19,6 @@ Este projeto apresenta um pipeline completo para transformar uma coleção de do
     * [Instalação](#instalação)
 * [▶️ Como Usar](#-como-usar)
 * [📂 Estrutura do Projeto](#-estrutura-do-projeto)
-* [📄 Licença](#-licença)
-* [📧 Contato](#-contato)
 
 ---
 
@@ -107,7 +105,7 @@ optimum
 
 ```bash
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone [https://github.com/ValdemirBSJr/python/tree/master/treinando_IA_modelo_ds](https://github.com/ValdemirBSJr/python/tree/master/treinando_IA_modelo_ds)
 ```
 
 - Navegue até o diretório do projeto:
@@ -140,4 +138,5 @@ source .venv/bin/activate
 
 ```bash
 uv pip install -r requirements.txt
+
 ```
