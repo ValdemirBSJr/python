@@ -4,10 +4,10 @@ from gguf import GGUFWriter
 
 
 # Caminho do modelo ONNX de entrada
-caminho_modelo_onnx = r"C:\Users\N5669203\Documents\PycharmProjects\treinando_IA_modelo_ds\modelo_onnx\model.onnx"
-caminho_pesos = r"C:\Users\N5669203\Documents\PycharmProjects\treinando_IA_modelo_ds\modelo_onnx\pesos.npz"
-caminho_gguf = r"C:\Users\N5669203\Documents\PycharmProjects\treinando_IA_modelo_ds\modelo_onnx\model.gguf"
-caminho_modelfile = r"C:\Users\N5669203\Documents\PycharmProjects\treinando_IA_modelo_ds\modelo_onnx\meu-modelo-teste.modelfile"
+caminho_modelo_onnx = r"C:\Users\Seu_user\Documents\PycharmProjects\treinando_IA_modelo_ds\modelo_onnx\model.onnx"
+caminho_pesos = r"C:\Users\Seu_user\Documents\PycharmProjects\treinando_IA_modelo_ds\modelo_onnx\pesos.npz"
+caminho_gguf = r"C:\Users\Seu_user\Documents\PycharmProjects\treinando_IA_modelo_ds\modelo_onnx\model.gguf"
+caminho_modelfile = r"C:\Users\Seu_user\Documents\PycharmProjects\treinando_IA_modelo_ds\modelo_onnx\meu-modelo-teste.modelfile"
 
 # Carregar o modelo ONNX
 
@@ -23,7 +23,7 @@ for initializer in onnx_modelo.graph.initializer:
 # Salvar os pesos em um formato compatível com GGUF
 print("Convertendo os pesos para NPZ...")
 # Aqui, usamos a API do llama-cpp-python para salvar no formato GGUF
-np.savez(r"C:\Users\N5669203\Documents\PycharmProjects\treinando_IA_modelo_ds\modelo_onnx\pesos.npz", **pesos)
+np.savez(r"C:\Users\Seu_user\Documents\PycharmProjects\treinando_IA_modelo_ds\modelo_onnx\pesos.npz", **pesos)
 
 print("Carregando pesos...")
 
@@ -60,6 +60,7 @@ with open(caminho_modelfile, "w") as f:
     f.write("LICENSE MIT\n")
 
 print("ModelFile criado com sucesso!")
+
 
 
 
