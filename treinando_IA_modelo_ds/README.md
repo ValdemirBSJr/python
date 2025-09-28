@@ -105,7 +105,7 @@ optimum
 
 ```bash
 
-git clone [https://github.com/ValdemirBSJr/python/tree/master/treinando_IA_modelo_ds](https://github.com/ValdemirBSJr/python/tree/master/treinando_IA_modelo_ds)
+git clone https://github.com/ValdemirBSJr/python/tree/master/treinando_IA_modelo_ds
 ```
 
 - Navegue até o diretório do projeto:
@@ -140,3 +140,4 @@ source .venv/bin/activate
 uv pip install -r requirements.txt
 
 ```
+
