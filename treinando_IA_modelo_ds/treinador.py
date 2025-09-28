@@ -1,11 +1,3 @@
-#instalar o cmake e caso nao va pro path do win adicionar ele
-#pip install PyPDF2 python-docx transformers datasets torch
-#pip install transformers[sentencepiece]
-#pip install transformers[torch]
-#pip install onnx
-#pip install onnx onnxruntime
-#pip install optimum
-#pip install gguf
 
 '''
 Ele vai gerar varios arquivos na pasta meu_modelo_ajustado.
@@ -21,7 +13,7 @@ rodar converter_para_gguff.py
 3 - rode no ollama:
 ollama serve
 ollama list
-ollama create meu-modelo-teste -f C:\Users\N5669203\Documents\PycharmProjects\treinando_IA_modelo_ds\modelo_onnx\meu-modelo-teste.modelfile
+ollama create meu-modelo-teste -f C:\Users\Seu-user\Documents\PycharmProjects\treinando_IA_modelo_ds\modelo_onnx\meu-modelo-teste.modelfile
 ollama run meu-modelo-teste
 
 O LM studio GGUF ou diretamente no formato do hugging face
@@ -101,8 +93,6 @@ def gerar_pr_pares(contexto):
 
 def preencher_respostas(pares_perg_resp):
     # Carregar um modelo de question-answering > questao_resposta
-    #modelo_perg_resp = "huawei-noah/TinyBERT_General_4L_312D" NAO FUNFOU BEM se nao declarar essa variavel, ele vai por um modelo padrao
-    #pr_pipeline = pipeline("question-answering", model=modelo_perg_resp, tokenizer=modelo_perg_resp)
     modelo_perg_resp = "deepset/roberta-base-squad2"  # Modelo RoBERTa ajustado para QA
     #modelo_perg_resp = "distilbert-base-cased-distilled-squad"
     pr_pipeline = pipeline("question-answering", model=modelo_perg_resp, tokenizer=modelo_perg_resp)
@@ -218,7 +208,7 @@ def treinar_modelo(questoes_dataset):
     print("Modelo treinado e salvo com sucesso!")
 
 # Pasta contendo os documentos
-diretorio_documentos = r"C:\Users\N5669203\Documents\PycharmProjects\treinando_IA_modelo_ds\arquivos_base"
+diretorio_documentos = r"C:\Users\Seu-user\Documents\PycharmProjects\treinando_IA_modelo_ds\arquivos_base"
 
 # Processar documentos e gerar o conjunto de dados
 perg_resp_dataset = processar_documentos(diretorio_documentos)
@@ -228,4 +218,5 @@ with open("pr_dataset.json", "w", encoding="utf-8") as arq_json:
     json.dump(perg_resp_dataset, arq_json, ensure_ascii=False, indent=4)
 
 # Treinar o modelo com o conjunto de dados gerado
+
 treinar_modelo(perg_resp_dataset)
