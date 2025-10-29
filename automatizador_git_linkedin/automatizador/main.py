@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import stat
 import shutil
 import tempfile
 import subprocess
@@ -10,6 +11,21 @@ from pathlib import Path
 from dotenv import load_dotenv
 from typing import Optional, List, Dict, Tuple
 from tkinter import simpledialog, messagebox, filedialog, scrolledtext, Listbox, END, Toplevel
+
+# --- 0.1 Função para ajudar a desbloquear arquivos .git encadeados readonly ---
+def rm_erro(func, path, exc_info):
+    """
+    Handler de erro para shutil.rmtree, caso recebamos um
+    arquivo bloqueado para edção/remoção tentamos remover o atributo pra o win
+    """
+    try:
+        # Tenta remover o atributo 'read-only'
+        os.chmod(path, stat.S_IWRITE)
+        # Tenta executar a função de remoção (ex: os.remove) novamente
+        func(path)
+    except Exception as e:
+        print(f"Falha ao forçar a remoção de {path}: {e}")
+        
 
 
 # --- 1. Verificações de Pré-requisitos ---
@@ -486,7 +502,7 @@ class AutomatizadorApp:
         self._processar_arquivos_github()
 
 
-    def _processar_arquivos_github(self):
+        def _processar_arquivos_github(self):
         """Passo 4: Gera e escreve os arquivos README.md e .gitignore NA PASTA DO PROJETO.
         Limpa os aninhados (.git, etc)
         """
@@ -496,49 +512,30 @@ class AutomatizadorApp:
             self._finalizar_com_erro("Erro interno: Serviço GitHub não foi inicializado.")
             return
 
+        print(f"\n[INFO] Verificando pastas .git aninhadas em: {self.pasta_projeto}n")
+
         # vamos verificar os subdirtórios em busca de .git redundantes
         # a partir da pasta raiz (self.pasta_projeto).
         # topdown=True permite "podar" diretórios da busca, o que é mais eficiente.
-        pastas_removidas_log = []  # Para informar o usuário no final
-        for dirpath, dirnames, filenames in os.walk(self.pasta_projeto, topdown=True):
-            # Modificamos 'dirnames' IN-PLACE para dizer ao os.walk para
-            # NÃO entrar nessas pastas. Isso acelera muito a varredura
-            # e evita apagar .git de um venv, por exemplo.
-            dirnames[:] = [d for d in dirnames if d not in [
-                'venv', '.venv', '__pycache__', '.idea', 'node_modules', '.git'
-            ]]
+        pastas_git_aninhadas = list(self.pasta_projeto.rglob('.git'))
+        pastas_removidas = []
 
-            # Se a subpasta tiver um .git ele verá aqui
-            dirnames[:] = [d for d in dirnames if d not in [
-                'venv', '.venv', '__pycache__', '.idea', 'node_modules'
-            ]]
+        if pastas_git_aninhadas:
+            for pasta_git in pastas_git_aninhadas:
+                # Garante que é um diretório e que realmente existe
+                if pasta_git.exists() and pasta_git.is_dir():
+                    try:
+                        shutil.rmtree(pasta_git, onerror=rm_erro)
+                        print(f"Removido repositório .git aninhado: {pasta_git}")
+                        pastas_removidas.append(str(pasta_git))
+                    except Exception as e:
+                        messagebox.showwarning("Aviso de Limpeza",
+                                               f"Não foi possível remover o .git aninhado: {pasta_git}\n{e}")
 
-            # Agora verificamos se '.git' existe na lista de subpastas
-            # do diretório atual (dirpath)
-            if '.git' in dirnames:
-                caminho_git_aninhado = Path(dirpath) / ".git"
-
-                try:
-                    # Removemos a árvore do diretório .git
-                    shutil.rmtree(caminho_git_aninhado)
-
-                    # Guarda o log para informar o usuário
-                    pastas_removidas_log.append(str(dirpath))
-
-                    # Removemos '.git' da lista 'dirnames' IN-PLACE.
-                    # Isso impede que o os.walk tente entrar na pasta .git
-                    # que acabamos de apagar, o que causaria um erro.
-                    dirnames.remove('.git')
-
-                except Exception as e:
-                    messagebox.showwarning("Aviso de Limpeza", f"Não foi possível remover .git de {dirpath}: {e}")
-
-        # Se encontramos e removemos algum .git, informamos o usuário.
-        if pastas_removidas_log:
-            messagebox.showinfo("Limpeza Concluída",
-                                f"Repositórios .git aninhados (submódulos) foram removidos das seguintes pastas:\n\n" +
-                                '\n'.join(pastas_removidas_log) +
-                                "\n\nIsso garante o upload correto de todos os arquivos.")
+            if pastas_removidas:
+                messagebox.showinfo("Limpeza de Submódulos",
+                                    f"Foram encontrados e removidos {len(pastas_removidas)} repositórios .git aninhados."
+                                    " Isso garante um upload limpo dos arquivos.")
 
         # Gerar README
         readme_conteudo = self.servico_groq.gerar_readme(self.texto_artigo)
