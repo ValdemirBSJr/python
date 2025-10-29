@@ -1,0 +1,31 @@
+class Lista_Site_Fontes(dict):
+
+    '''
+    Instanciamos todas os sites das fontes
+    :parameter chave >>> chave das fontes
+    :param valor >>> valores que contem os endereços
+    '''
+
+
+
+    def __init__(self, _chave=None, _valor=None):
+        self[_chave] = _valor
+        info = self.funcao_retorna_dict()
+
+        if info:
+            for k, v in info.items():
+                self[k] = v
+
+    def funcao_retorna_dict(self):
+        return {'tsa': 'tsasite', 'jpa': 'jpasite'}
+
+
+
+
+
+
+
+if __name__ == '__main__':
+
+    objeto = Lista_Site_Fontes()
+    print(objeto)

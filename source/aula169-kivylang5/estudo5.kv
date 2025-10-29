@@ -1,0 +1,18 @@
+<MinhaTela@BoxLayout>:
+    orientation: "vertical"
+
+    Button:
+        text:"self" #se refere ao proprio elemento
+        on_press: self.funcSelf()
+
+    Button:
+        text:"root" #se refere a classe
+        on_press: root.funcRoot()
+
+    Button:
+        text:"app" #se refere a aplicacao
+        on_press: app.funcApp()
+
+
+
+MinhaTela:
