@@ -29,6 +29,12 @@ Para utilizar este projeto, siga os passos abaixo:
 4. **Execute o arquivo run.bat ou run.sh (de acordo com seu SO)**
 5. **Siga os passos** para criar o arquivo `README.md` e configurar o projeto para subida no GitHub.
 
+### Esquema do .env:
+
+```bash
+GROQ_API_KEY=Sua_chave_Aqui
+```
+
 ## Artigo original demonstrando o uso:
 [https://www.linkedin.com/pulse/como-parei-de-criar-readmes-manualmente-usando-python-valdemir-rdycc](https://www.linkedin.com/pulse/como-parei-de-criar-readmes-manualmente-usando-python-valdemir-rdycc)
 
