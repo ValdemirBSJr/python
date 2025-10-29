@@ -1,5 +1,7 @@
-# Título
 # Projeto de Automação de Subida de Projetos para GitHub
+
+![Python]([https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python](https://img.shields.io/badge/Python-3.11%2B-blue?style=for-the-badge&logo=python))
+
 
 ## Descrição curta
 Este projeto tem como objetivo automatizar a subida de projetos para o GitHub, criando um arquivo `README.md` funcional e configurando o `.gitignore` com a ajuda de Inteligência Artificial (IA).
@@ -27,4 +29,7 @@ Para utilizar este projeto, siga os passos abaixo:
 4. **Execute o script** para criar o arquivo `README.md` e configurar o projeto para subida no GitHub
 
 ## Contato
-Para mais informações ou sugestões, sinta-se à vontade para entrar em contato. Este projeto é opensource e qualquer contribuição é bem-vinda!
+
+* **Valdemir Bezerra de Souza Júnior**
+* Analista Infraestrutura | Devops | SRE | Cloud | Oracle Cloud | Linux | Docker | Kubernets | Python | Go | Rust | Lua | N8N | No Code
+* [Linkedin](https://www.linkedin.com/in/valdemirbezerra/)
