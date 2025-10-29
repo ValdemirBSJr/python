@@ -26,7 +26,8 @@ Para utilizar este projeto, siga os passos abaixo:
 	* Execute o comando `gh auth login`
 	* Selecione a opção "HTTPS" como forma de acesso ao seu GitHub
 	* Autentique-se com suas credenciais (não esqueça de ativar a autenticação de 2 fatores, se necessário)
-4. **Execute o script** para criar o arquivo `README.md` e configurar o projeto para subida no GitHub
+4. **Execute o arquivo run.bat ou run.sh (de acordo com seu SO)**
+5. **Siga os passos** para criar o arquivo `README.md` e configurar o projeto para subida no GitHub.
 
 ## Contato
 
