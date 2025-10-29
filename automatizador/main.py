@@ -265,10 +265,61 @@ class GitHubService:
         return True
 
     def publicar_em_repositorio_existente(self, url_repo: str) -> bool:
-        """Faz o push para um repositório existente."""
+        """Faz o pull, adiciona arquivos e faz o push para um repositório existente."""
         if not self._inicializar_git(): return False
         if not self._configurar_remoto(url_repo): return False
-        if not self._fazer_commit_e_push(): return False
+
+        # Usamos a lógica de pull-then-push
+        # Adiciona os novos arquivos (README, .gitignore, e os arquivos do projeto)
+        sucesso, saida = self._executar_comando(["git", "add", "."], cwd=self.pasta_projeto)
+        if not sucesso:
+            messagebox.showerror("Erro Git", f"Falha no 'git add' inicial:\n{saida}")
+            return False
+
+        # Faz um commit local (se houver o que commitar)
+        status_sucesso, status_saida = self._executar_comando(["git", "status", "--porcelain"], cwd=self.pasta_projeto)
+        if status_saida:  # Se houver mudanças
+            mensagem_commit = "Adiciona/atualiza arquivos do projeto via script"
+            comando_commit = ["git", "commit", "-m", mensagem_commit]
+            sucesso, saida = self._executar_comando(comando_commit, cwd=self.pasta_projeto)
+            if not sucesso:
+                messagebox.showerror("Erro Git", f"Falha no 'git commit' local:\n{saida}")
+                return False
+
+        # Busca o histórico do repositório remoto
+        sucesso, saida = self._executar_comando(["git", "fetch", "origin"], cwd=self.pasta_projeto)
+        if not sucesso:
+            messagebox.showerror("Erro Git", f"Falha no 'git fetch':\n{saida}")
+            return False
+
+        # Tenta fazer o PULL (merge) do histórico remoto (tentando main e master)
+        # Usamos --allow-unrelated-histories porque o 'git init' local
+        # e o repo remoto não têm um histórico em comum.
+        # Usamos --no-edit para aceitar a mensagem de merge padrão.
+
+        comando_pull_main = ["git", "pull", "origin", "main", "--allow-unrelated-histories", "--no-edit"]
+        sucesso_main, saida_main = self._executar_comando(comando_pull_main, cwd=self.pasta_projeto)
+
+        if not sucesso_main:
+            # Se 'main' falhar (talvez o branch se chame 'master')
+            comando_pull_master = ["git", "pull", "origin", "master", "--allow-unrelated-histories", "--no-edit"]
+            sucesso_master, saida_master = self._executar_comando(comando_pull_master, cwd=self.pasta_projeto)
+
+            if not sucesso_master:
+                # Se ambos falharem, mostramos o erro.
+                messagebox.showerror("Erro Git",
+                                     f"Falha ao fazer 'git pull' de 'main' ou 'master'.\n\nErro (main):\n{saida_main}\n\nErro (master):\n{saida_master}")
+                return False
+
+        # 5. Se o pull foi bem-sucedido, um commit de merge pode ter sido criado.
+        # Agora, finalmente, fazemos o push para o branch atual (HEAD).
+
+        comando_push = ["git", "push", "origin", "HEAD"]
+        sucesso, saida = self._executar_comando(comando_push, cwd=self.pasta_projeto)
+        if not sucesso:
+            messagebox.showerror("Erro Git", f"Falha no 'git push' final:\n{saida}")
+            return False
+
 
         return True
 
