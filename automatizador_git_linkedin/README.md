@@ -1,6 +1,6 @@
 # Projeto de Automação de Subida de Projetos para GitHub
 
-![Python]([https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python](https://img.shields.io/badge/Python-3.11%2B-blue?style=for-the-badge&logo=python))
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue?style=for-the-badge&logo=python)
 
 
 ## Descrição curta
