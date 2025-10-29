@@ -1,9 +1,0 @@
-pyproject.toml
-automatizador/__init__.py
-automatizador/main.py
-automatizador_git_linkedin.egg-info/PKG-INFO
-automatizador_git_linkedin.egg-info/SOURCES.txt
-automatizador_git_linkedin.egg-info/dependency_links.txt
-automatizador_git_linkedin.egg-info/entry_points.txt
-automatizador_git_linkedin.egg-info/requires.txt
-automatizador_git_linkedin.egg-info/top_level.txt

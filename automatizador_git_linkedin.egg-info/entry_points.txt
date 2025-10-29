@@ -1,2 +1,0 @@
-[console_scripts]
-meu-app = automatizador.main:iniciar_aplicacao
